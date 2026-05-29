@@ -4,7 +4,7 @@
 
 ---
 
-I have been building software for twenty-four years. I have watched this industry reinvent itself more than once — from waterfall to agile, from monoliths to microservices, from data centres to cloud-native. Each of those shifts felt enormous at the time. Each one demanded new skills, retired old assumptions, and forced entire organizations to rethink how they worked.
+I have been building software for over two decades. I have watched this industry reinvent itself more than once — from waterfall to agile, from monoliths to microservices, from data centres to cloud-native. Each of those shifts felt enormous at the time. Each one demanded new skills, retired old assumptions, and forced entire organizations to rethink how they worked.
 
 This one is different.
 

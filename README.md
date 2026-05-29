@@ -18,7 +18,7 @@ This series examines that migration — where the bottlenecks are moving, what b
 
 ## About the Author
 
-Written from the perspective of a senior architect with 24 years of industry experience across multiple paradigm shifts: waterfall to agile, monolith to microservices, on-premise to cloud-native, and now the AI-first transformation. This is not a trend report. It is a practitioner's analysis of what is actually changing on the ground.
+Written from the perspective of a senior architect with over two decades of industry experience across multiple paradigm shifts: waterfall to agile, monolith to microservices, on-premise to cloud-native, and now the AI-first transformation. This is not a trend report. It is a practitioner's analysis of what is actually changing on the ground.
 
 ---
 

@@ -4,7 +4,7 @@
 How software engineering is being fundamentally reshaped in the AI-first era, and what it means for every stakeholder — from architects to developers to testers to leaders.
 
 ## Author Perspective
-Written from the lens of a senior architect with 24 years of industry experience who has lived through multiple paradigm shifts: waterfall to agile, monolith to microservices, on-premise to cloud-native, and now the AI-first transformation.
+Written from the lens of a senior architect with over two decades of industry experience who has lived through multiple paradigm shifts: waterfall to agile, monolith to microservices, on-premise to cloud-native, and now the AI-first transformation.
 
 ## Posts
 

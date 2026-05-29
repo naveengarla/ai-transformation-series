@@ -4,7 +4,7 @@
 **A Whitepaper on the Systemic Impact of AI-Accelerated Development**
 
 *Naveen George Korah*
-*Senior Architect | 24 Years in Software Engineering*
+*Senior Architect | Over Two Decades in Software Engineering*
 *May 2026*
 
 ---
@@ -52,7 +52,7 @@ This paper provides a readiness framework for engineering leaders navigating thi
 
 ## 1. Introduction: The Bottleneck Migration Thesis
 
-I have been building software for twenty-four years. I have watched this industry reinvent itself more than once — from waterfall to agile, from monoliths to microservices, from data centres to cloud-native. Each of those shifts felt enormous at the time. Each demanded new skills, retired old assumptions, and forced entire organizations to rethink how they worked.
+I have been building software for over two decades. I have watched this industry reinvent itself more than once — from waterfall to agile, from monoliths to microservices, from data centres to cloud-native. Each of those shifts felt enormous at the time. Each demanded new skills, retired old assumptions, and forced entire organizations to rethink how they worked.
 
 This shift is different in character. Not because AI is more hyped — every transition had its hype cycle. It is different because, for the first time, the transformation is pressuring every layer of how we build software simultaneously. Build systems. Testing strategies. Code review processes. Release pipelines. Version control. Team structures. Career ladders.
 
