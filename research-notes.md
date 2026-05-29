@@ -807,6 +807,87 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 
 ---
 
+## Enterprise Agentic AI Infrastructure Deep Research (May 2026)
+
+**Source:** Deep Research Report — "The State of Enterprise Agentic AI Infrastructure: Frameworks, Memory, Runtime, and Observability in 2026"
+
+### Key Data Points Not Currently in Post 6
+
+**Frameworks:**
+- LangGraph: 27,100 monthly technical search queries as of early 2026 (developer mindshare metric)
+- Microsoft Agent Framework 1.0 (GA April 2026): Unified AutoGen + Semantic Kernel; LTS for .NET AND Python; AutoGen placed into maintenance mode
+- MCP: 97M monthly SDK downloads within one year of launch (previously noted as 110M — use higher number)
+- MCP transports: stdio for local/single-machine; Streamable HTTP (HTTPS + SSE) for distributed enterprise
+- MCP security: OAuth 2.0 + OpenID Connect natively; TLS encryption; agent never handles raw credentials
+- MCP bidirectional primitive: `sampling/createMessage` — allows downstream MCP server to request LLM completion from host (essential for recursive workflows)
+- N×M integration problem: 50 tools × 5 LLMs = 250 custom API wrappers → eliminated by MCP
+
+**Memory Architecture (Critical — currently thin in Post 6):**
+- Four-tiered cognitive map:
+  1. Working Memory — active context window only
+  2. Episodic Memory — time-stamped observation-action-outcome tuples (e.g., "Tuesday 10AM: user rejected email for being too formal")
+  3. Semantic Memory — durable generalized facts and user preferences
+  4. Procedural Memory — operational guidelines, system prompts, tool-use workflows
+- GENESIS framework: bidirectional episodic ↔ semantic; consolidation step merges conflicting facts autonomously
+- Multi-factor retrieval scoring: `final_score = α × cosine_similarity + β × recency_decay + γ × importance_rating`
+- Importance rating assigned at encoding time (1-10 scale); peanut allergy = 10, weather comment = 1
+- Mem0 benchmarks vs full-context: **+26% accuracy, 91% lower p95 latency, 90% token reduction**
+- Mem0 Graph Variant (Mem0ᵍ): **68.4% accuracy on multi-hop reasoning tasks**
+- Letta/MemGPT: uses only 6.5% of context window (~2,093 of 32,000 tokens) for working memory; rest paged to external storage
+- Zep: temporal knowledge graph tracking how entities/relationships evolve over time
+
+**Runtimes:**
+- Temporal: each step wrapped as Activity in stateful Workflow; exponential backoff on failure; HITL via Signal primitive — workflow can suspend for days/weeks without active compute
+- MicroVM providers: Blaxel (sub-25ms resume speeds, hardware-enforced isolation via Firecracker), E2B (coding-agent focused, 24hr session cap)
+- gVisor approach (Modal): userspace kernel interception vs dedicated kernel — slower resume, needs warm pools
+- Multi-tenancy: Silo (isolated, expensive) / Pool (shared, unsafe) / Bridge = modern standard. Amazon Bedrock AgentCore uses session-isolated microVMs per tenant
+
+**Observability:**
+- OTel GenAI semantic conventions: `gen_ai.system`, `gen_ai.request.model`, `gen_ai.usage.input_tokens`, prompt contents, tool invocation arguments, finish reasons
+- Maxim AI: integrates production monitoring + simulation + evaluation; trace-to-dataset capability (convert production failure to simulation dataset instantly)
+- LangSmith: annotation queues for non-technical domain experts; deep LangGraph coupling
+- Arize Phoenix: ML-grade evaluation, OTel compatible, RAG pipeline visualization
+- Langfuse: self-hosted tracing + prompt management version control
+
+**Anti-Patterns (New section for Post 6):**
+1. **Monolithic Mega-Prompt** — hundreds of instructions in one system prompt overwhelms attention; fix: narrow specialized agents orchestrated by state machine
+2. **Agent-as-Business-Process Fallacy** — replacing deterministic business logic with black-box agent; fix: agents at edges to parse unstructured data, deterministic core
+3. **Invisible State Management** — relying on raw conversation history for multi-day tasks without external persistence
+4. **Uncontrolled Recursion** — reflection quality diminishes sharply after 2-3 cycles; need hard computational limits
+5. **Voice Collapse/Transcript Drift** — agents hallucinate policies under peak load; symptom of poor memory + no online evaluation gates
+6. **Agent Sprawl** — dozens of agents without ownership/credentials/escalation paths; governance must be day-1, not retrofit
+
+**GraphRAG result:** 63% reduction in enterprise ticket resolution times (vs flat vector RAG)
+
+---
+
+## Thoughtworks Deep Research Agent — Healthcare/Pharma (Arc of AI Conference 2026)
+
+**Speaker:** Sarang Kulkarni, Thoughtworks
+**Context:** Multi-agent research systems for healthcare and pharmaceutical R&D
+
+**Key Facts:**
+- Drug development cost: **$2.6B** to bring new drug to market
+- Half of research studies conducted without prior evidence — knowledge exists but access is broken
+- Evolution: RAG chatbot → Agentic RAG → **Agentic RAG++** (deep research system)
+
+**Architecture of Agentic RAG++:**
+- Clarification loop → Research loop (think/plan/execute/reflect/adjust) → Writing loop (write/reflect/redraft)
+- Tools: RAG tool (weighted hybrid search, 20 context chunks, re-ranker → 7 refined chunks) + text2sql tool (feeds SQL errors back to LLM)
+- Reflection step: data reflection + **process reflection** (is the process complete?) + **Draft Writing Loop** (catches synthesis gaps between research and writing)
+
+**Named Problems/Solutions:**
+- **Context anxiety** — too much context degrades agent performance
+- **Long-horizon task fragmentation** — decisions break between steps; fix: explicit think-act loop (think → plan → inspect → update)
+- Anthropic's "think" tool for formalizing reasoning pause
+- **Incomplete data → poor self-evaluation** — reflection loop helps
+
+**Harness Engineering Key Insight:**
+> "Since AI Agents are basically the combination of model and harness, the better the models are, the thinner the harness needs to be."
+> Goal: shift from prompt engineering to automated execution through tools, memory systems, validation checks, constraints, and feedback loops.
+
+**Distribution:** Post 6 (memory architecture, runtime, observability, anti-patterns), Post 4 (eval-driven development), Post 2 (architect - harness engineering concept)
+
 ## ClickHouse: A Year of AI Coding Agents in Production (May 2026)
 
 **Source:** ["What ClickHouse Learned from a Year of Coding with AI Agents"](https://thenewstack.io/clickhouse-ai-coding-agents/)
