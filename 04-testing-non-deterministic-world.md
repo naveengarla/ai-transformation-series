@@ -116,6 +116,18 @@ Anthropic's practices reflect the same principle: unattended work should be foll
 > *Also show the adversarial review pattern: Writing agent → Fresh-context review agent → Verified output.*
 > *Style: Architecture diagram. Clean, showing separation of concerns and cross-validation.*
 
+## What Production-Scale CI Recovery Looks Like
+
+ClickHouse runs 20 to 80 million tests across approximately 600 commits and 300 pull requests per day. Their CI was accumulating roughly 200 failing test findings per day — a backlog the team could not keep up with. Their policy: never mute flaky tests, never retry. Every failure must be investigated.
+
+In January and February 2026, CTO Alexey Milovidov submitted approximately 700 pull requests fixing tests and CI infrastructure with AI agent assistance. The result: approximately 200 findings per day collapsed to 3–5 per 10 million test runs. The team now also runs two autonomous agents that continuously open PRs and find edge cases. [27]
+
+His assessment: *"This single use case justifies the entire investment."*
+
+And his most important insight for testing teams: **"The headroom in agent-assisted work is in your CI, not in the prompt."** Better prompts improve code generation marginally. A rigorous, well-instrumented test infrastructure improves everything — it gives agents the feedback they need to verify their own work, catches the cases humans miss, and creates the evidence base that makes review trustworthy.
+
+This is the practical expression of the verification bottleneck thesis. The constraint is not writing code. It is having fast, comprehensive, trustworthy signal about whether the code is correct. Invest in CI infrastructure with at least as much urgency as you invest in AI tooling.
+
 ## Recommendations for Testing Teams
 
 ### Start with evals, not tests
@@ -169,3 +181,4 @@ Adopt DORA's fifth metric. If your rework rate is rising, your verification pipe
 18. Red Hat (2026). ["Eval-Driven Development: Build and Evaluate Reliable AI Agents."](https://developers.redhat.com/articles/2026/03/23/eval-driven-development-build-evaluate-ai-agents)
 19. Thoughtworks (2026). ["Codebase Cognitive Debt."](https://www.thoughtworks.com/radar/techniques/codebase-cognitive-debt) Technology Radar, April 2026. — Mutation testing revival.
 20. LangChain (2026). [*State of Agent Engineering.*](https://www.langchain.com/state-of-agent-engineering) — 52.4% run offline evals, 37.3% online evals.
+21. Milovidov, A. (2026). ["What ClickHouse Learned from a Year of Coding with AI Agents."](https://thenewstack.io/clickhouse-ai-coding-agents/) The New Stack, May 24, 2026. — 700 PRs, 200 findings/day → 3–5 per 10M test runs; "headroom is in your CI, not the prompt."

@@ -38,6 +38,20 @@ Forsgren and MacVean identified five behavioural patterns in their highest-perfo
 > *Visual type: Annotated T-shape diagram. Show the traditional T (broad horizontal, deep vertical) on the left, and the new AI-native T on the right. The new T has: (1) a new horizontal layer at the base labeled "AI Collaboration Skills," (2) wider wings extending into "Adjacent Non-Engineering" (business context, user needs) and "Adjacent Engineering" (security, privacy, infrastructure), and (3) a transformed vertical labeled "Verification Depth" instead of "Implementation Speed."*
 > *Style: Clean comparison. The traditional T in muted gray, the new T in the accent color. Annotate each new element.*
 
+## Three Levels of AI-Assisted Development
+
+Before examining the psychological dimensions of this shift, it helps to have a clear map of where the industry currently is. ClickHouse CTO Alexey Milovidov, writing from a year of production experience on a large C++ codebase, describes three distinct levels of AI-assisted development that most engineers move through in sequence [27]:
+
+**Level 1 — Copy-paste from chat.** Ask a model a question in a browser tab and paste snippets into your editor. Still useful for exploration. Compared to agents, it is effectively obsolete.
+
+**Level 2 — Agents in your CLI or IDE.** The agent reads your codebase, runs commands, edits files, builds, tests, and commits. You hand-hold it for hard tasks and let it run for routine ones. This is where most current day-to-day work happens.
+
+**Level 3 — Autonomous agents in isolated environments.** Multiple agents in feedback loops, spec-driven development, and orchestrated multi-agent setups. A few examples in production, but the tooling is still maturing. *"Results from long autonomous loops can be dubious."*
+
+Most developers in 2026 are operating between Level 1 and Level 2. Level 3 is where the profession is heading. Understanding which level you are at — and which level each task warrants — is itself a new skill.
+
+Milovidov's framing for all three levels applies regardless of where you are: *"Treat AI as a tool of thought, not a replacement for thinking. It is an extension of your editor, not your engineering judgment."*
+
 ## The Orchestration Tax
 
 There is a concept from Addy Osmani that should be required reading for every developer managing AI agents: the Orchestration Tax.
@@ -82,6 +96,8 @@ The workflow in Spec Kit makes the separation concrete:
 4. **/implement** — The AI executes tasks one by one, with the human acting as reviewer and verifier at each checkpoint.
 
 This is not vibe coding. It is the opposite. Vibe coding lets the AI invent architecture on the fly; spec-driven development constrains what the AI generates by rigorous upfront intent definition.
+
+ClickHouse CTO Alexey Milovidov offers a useful practical framework from a year of production experience: keep CLAUDE.md and AGENTS.md files short. Long instruction files get ignored by the model. And — critically — **avoid telling the model what not to do.** Negative instructions frequently have the opposite of the intended effect. Capture what the agent should do, which files matter, and which approach to take. That specificity preserves your engineering judgment while improving agent output [27].
 
 The practice is driven by a growing ecosystem of structured markdown files that persist project instructions across sessions:
 
@@ -186,6 +202,7 @@ As the fireside panelists at Google I/O put it: we are not leaving behind the cr
 - ["Don't Outsource the Learning,"](https://addyosmani.com/blog/dont-outsource-learning/) AddyOsmani.com — MIT EEG study, CHI 2026 anchoring study
 
 **Spec-Driven Development**
+- Milovidov, A. (2026). ["What ClickHouse Learned from a Year of Coding with AI Agents."](https://thenewstack.io/clickhouse-ai-coding-agents/) The New Stack, May 24, 2026. — Three-level taxonomy, CLAUDE.md guidance, "tool of thought not replacement"
 - ["Diving Into Spec-Driven Development With GitHub Spec Kit,"](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) Microsoft Developer Blog
 - ["Spec-Driven Development: Unpacking One of 2025's Key New Engineering Practices,"](https://www.thoughtworks.com/en-us/insights/blog/agile-engineering-practices/spec-driven-development-unpacking-2025-new-engineering-practices) Thoughtworks (Dec 2025)
 - Anthropic, ["Effective Context Engineering for AI Agents"](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)

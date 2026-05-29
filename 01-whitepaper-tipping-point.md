@@ -189,6 +189,8 @@ AI follows the same pattern. Nicole Forsgren and Andrew MacVean from Google's De
 
 The DORA 2025 Report confirms this empirically: "AI doesn't fix a team; it amplifies what's already there" [5]. If an organization has well-aligned teams with strong practices, AI accelerates value delivery. If it has fragmented tooling, siloed data, or a culture of blame, AI will help it generate technical debt at unprecedented speed.
 
+Real-world production data validates this at the individual level too. ClickHouse CTO Alexey Milovidov, writing about a year of agents on one of the most demanding open-source C++ codebases in existence, put it plainly: *"Strong engineers get sharper with agents. Weaker engineers cause more damage. There is no shortcut around understanding the problem."* [26] The amplifier effect is not just organizational — it operates at the level of every individual on the team.
+
 > **[FIGURE 5: "The Amplifier Effect"]**
 > *Split/mirror diagram. Left: High-Maturity Team — AI amplifies strong foundations into accelerated delivery, quality loops, faster feedback. Right: Low-Maturity Team — AI amplifies weak foundations into faster debt accumulation, review backlogs, instability.*
 > *Style: Symmetrical. Left in blue/green, right in orange/red.*
@@ -349,6 +351,7 @@ The tipping point is not coming. We are standing on it.
 14. Pichai, S. (2026). Google Cloud Next 2026 Keynote. 75% of new Google code is AI-generated. [Coverage](https://www.techspot.com/news/112152-google-ai-now-generates-75-new-code-up.html)
 15. Osmani, A. (2026). "Cognitive Surrender." *AddyOsmani.com*, May 2026. [Post](https://addyosmani.com/blog/cognitive-surrender/)
 16. Jevons, W. S. (1865). *The Coal Question: An Inquiry Concerning the Progress of the Nation, and the Probable Exhaustion of Our Coal-Mines.* Macmillan and Co.
+17. Milovidov, A. (2026). ["What ClickHouse Learned from a Year of Coding with AI Agents."](https://thenewstack.io/clickhouse-ai-coding-agents/) The New Stack, May 24, 2026. — "Strong engineers get sharper with agents. Weaker engineers cause more damage."
 
 ### Industry Analysis
 17. The New Stack (2026). "This Simple Infrastructure Gap Is Holding Back AI Productivity." Feb 2026. [Article](https://thenewstack.io/this-simple-infrastructure-gap-is-holding-back-ai-productivity/)
