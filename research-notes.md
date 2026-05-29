@@ -330,6 +330,70 @@ Seven prompts were given to the user for deep research on each post topic. The u
 
 ---
 
+## Big Tech Open-Source Releases & Strategic Signals (Researched 2026-05-29)
+
+### Microsoft
+- **Agent Framework 1.0** (April 7, 2026): Merged AutoGen + Semantic Kernel. GA for Python and .NET. 5 orchestration patterns (sequential, concurrent, handoff, group chat, Magentic-One). 7 model providers (Foundry, Azure OpenAI, OpenAI, Claude, Bedrock, Gemini, Ollama). MCP + A2A + OpenTelemetry native. Declarative agents via YAML. [Blog](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) | [Learn](https://learn.microsoft.com/en-us/agent-framework/overview/)
+- **Agent Governance Toolkit** (April 2, 2026): 7-package system (Python, TS, Rust, Go, .NET). Agent OS (policy engine, p99 <0.1ms), Agent Compliance (EU AI Act, HIPAA, SOC2 mapping), Agent Marketplace (Ed25519 signing, trust-tiered gating), Agent Lightning (RL governance). MIT license. [Blog](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/)
+- **RAMPART & Clarity** (May 2026): AI Red Team security tools. RAMPART: continuous adversarial testing built on PyRIT, slots into CI/CD pipeline. Clarity: structured design review. [Coverage](https://www.helpnetsecurity.com/2026/05/21/microsoft-open-sources-tools-for-designing-and-testing-ai-agents/)
+- **Phi-4 family**: Phi-4-reasoning-vision-15B (March 2026, edge-deployable), Phi-4-multimodal 5.6B (speech+vision+text unified)
+- **Playwright MCP**: Web browsing for agents via MCP server. Ready-to-use example in AutoGen repo.
+- **MarkItDown MCP**: Document parsing (PDF, DOCX) to markdown for agent consumption.
+- **Power Platform Canvas Authoring MCP** (May 14, 2026): Natural-language app migration.
+- **Strategic signal**: Microsoft is betting on GOVERNANCE as the differentiator. While others focus on agent capability, Microsoft is building the compliance/security/policy layer. Early adopters: KPMG (audit), BMW (vehicle telemetry).
+
+### Google
+- **ADK 2.0** (2026): Python, TypeScript, Go. Workflow Runtime (graph-based execution), Task API (structured agent-to-agent delegation). Native A2A. ~17.8K GitHub stars, 3.3M monthly downloads. Bi-weekly release cadence. [Python](https://github.com/google/adk-python) | [JS](https://github.com/google/adk-js) | [Go](https://github.com/google/adk-go)
+- **Gemma 4** (April 2026): 2B to 31B sizes, Apache 2.0. 31B scores 84.3% GPQA Diamond. Consumer/IoT-optimized. Best open-weight for local/edge.
+- **Gemini CLI**: Open-source terminal agent under Apache 2.0.
+- **TPU 8t/8i** (May 2026): Training + inference split chips. Virgo network: 134K TPUs in single fabric, 1M+ across sites.
+- **Antigravity 2.0 + CLI**: Agentic development environment with subagent orchestration, built-in security.
+- **Strategic signal**: Google is betting on VERTICAL INTEGRATION (hardware → model → framework → platform) and CROSS-FRAMEWORK INTEROPERABILITY via A2A. 50+ partners (Salesforce, ServiceNow) can invoke ADK agents.
+
+### AWS
+- **Strands Agents SDK**: Model-driven agent SDK with native Bedrock integration.
+- **Bedrock AgentCore**: Managed infrastructure for agents — compliance, scaling, monitoring built-in.
+- **Trainium2**: Custom training chip focused on cost efficiency vs NVIDIA GPUs.
+- **Strategic signal**: AWS is betting on MANAGED INFRASTRUCTURE — less on the framework layer, more on making agents enterprise-deployable at scale with compliance out of the box.
+
+### Anthropic
+- **Claude Agent SDK** (renamed from Claude Code SDK): The agent harness powering Claude Code, exposed as a library. 7,098+ GitHub stars, MIT license. Structured outputs, fallback model handling, extended context beta. [Repo](https://github.com/anthropics/claude-agent-sdk-python)
+- **Claude Code**: GA. Terminal-based agentic coding. Hooks, skills, subagents, telemetry via OpenTelemetry. Background tasks via GitHub Actions. VS Code + JetBrains integrations. Plugin ecosystem. [Repo](https://github.com/anthropics/claude-code)
+- **Claude Managed Agents**: Self-hosted sandboxes (Cloudflare, Daytona, Modal, Vercel). Outcomes (rubric-based grading, +10pts on hardest tasks). Private MCP server support.
+- **MCP**: Contributed to AAIF. 110M+ monthly SDK downloads. 10,000+ active servers.
+- **Strategic signal**: Anthropic is betting on DEVELOPER EXPERIENCE + CONTEXT ENGINEERING. Claude Code as the reference agent, Agent SDK as the build-your-own toolkit, MCP as the universal connector. "Claude Code has become far more than a coding tool — it powers almost all of their major agent loops."
+
+### Agentic AI Foundation (AAIF) — The Governance Layer
+- **Founded**: December 2025, under Linux Foundation.
+- **Founding projects**: MCP (Anthropic), goose (Block), AGENTS.md (OpenAI).
+- **Platinum members (8)**: AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI.
+- **Gold members (19+)**: Adyen, Arcade.dev, Cisco, Datadog, Docker, Ericsson, IBM, JetBrains, Okta, Oracle, Salesforce, SAP, Shopify, Snowflake, Temporal, Twilio, etc.
+- **Growth**: 170+ members in <4 months. MCP: 110M+ monthly SDK downloads. A2A: v1.0, 150+ supporting orgs. AGENTS.md: 60,000+ projects.
+- **Protocol stack**: MCP (tool connectivity) + A2A (agent coordination) + ACP (community-driven agent communication) — all under Linux Foundation.
+- **Events**: Global MCP Dev Summits in Mumbai, Seoul, Shanghai, Tokyo, Toronto, Nairobi throughout 2026.
+- **Future**: By 2027, bridges and unified SDKs. By 2028+, potential A2A/ACP convergence; MCP remains distinct tool layer. Formal ISO/IETF standardization possible.
+- [AAIF site](https://aaif.io/) | [Linux Foundation announcement](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)
+
+### Community & Ecosystem Signals
+- **GitHub**: 4.3M AI-related repositories (178% YoY jump in LLM-focused projects). OpenClaw: 0 → 210K stars in days.
+- **Top repos by stars (2026)**: AutoGPT (182K), n8n (162K), OpenClaw (210K+), Dify, RAGFlow (70K+), LangGraph (32.3K).
+- **Self-hosting renaissance**: OpenClaw, Open WebUI, RAGFlow, Dify all built for privacy-first, on-premise deployment.
+- **Terminal-first AI**: Claude Code, Gemini CLI, Codex CLI — shift away from browser-based AI toward tools in the dev environment.
+- **Multi-tool stack norm**: $30/month (Copilot Pro + Claude Code Pro) most common senior engineer configuration.
+- **Cursor**: $1.2B ARR. Claude: $2.5B annualized run rate.
+- **Consolidation**: Google acqui-hired Windsurf ($2.4B), Cognition acquired rest ($250M), Sourcegraph spun out Amp.
+- **OWASP Top 10 for Agentic Applications** (Dec 2025): First formal taxonomy of agent-specific risks.
+- **Regulation**: EU AI Act high-risk obligations take effect August 2026. Colorado AI Act enforceable June 2026.
+
+### Distribution to Articles
+- **Post 1 (Tipping Point)**: AAIF formation as evidence of industry recognizing the systemic challenge. Regulation timeline (EU AI Act Aug 2026).
+- **Post 2 (Architect)**: Microsoft Agent Framework declarative agents (YAML), Anthropic Agent SDK as reference architecture, ADK Task API for structured delegation, governance toolkit as new architectural primitive.
+- **Post 5 (Leadership)**: Agent Governance Toolkit (EU AI Act compliance mapping), OWASP Top 10 for Agentic Apps, regulation timeline, KPMG/BMW early adopters.
+- **Post 6 (Emerging Tech)**: ALL of this — enriches every layer. Microsoft's governance bet, Google's vertical integration, AWS managed infra, Anthropic's dev experience, AAIF standards, coding agent market ($1.2B Cursor, $2.5B Claude), framework comparison update, protocol convergence.
+- **Post 7 (2030 Vision)**: AAIF trajectory (ISO/IETF by 2028+), self-hosting renaissance, terminal-first shift, agent market $7.84B → $52.62B by 2030.
+
+---
+
 ## Notes
 
 - **Name correction:** Fiona Fung (not "Fiona Fun"). Title: Director of Engineering for Claude Code, Anthropic.
