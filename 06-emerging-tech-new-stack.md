@@ -31,7 +31,7 @@ The foundation of the AI stack is purpose-built hardware. NVIDIA dominates — s
 
 **NVIDIA's progression.** The H100 (Hopper) became the standard training GPU in 2024. The H200 added 141GB HBM3e memory and remains the production inference workhorse in 2026 at ~$4.54/hr on-demand. The B200 (Blackwell, 192GB HBM3e, 8 TB/s bandwidth, native FP4) delivers roughly 3x lower cost-per-token than H200 for optimized serving, though availability remains constrained through mid-2026. NVIDIA's next-generation Vera Rubin platform is expected in late 2026.
 
-**Google TPUs.** Google announced 8th-generation TPUs with two distinct chips for the first time: TPU 8t for training (3x compute over prior generation) and TPU 8i for inference (3x SRAM, 80% better cost-performance). Google's Virgo network can connect 134,000 TPUs into a single fabric — or over one million across sites.
+**Google TPUs.** Google announced 8th-generation TPUs with two distinct chips for the first time — a training-inference bifurcation that signals fundamentally different optimization targets. The **TPU 8t** (training) features SparseCore for offloading data-dependent collectives, native FP4 support, the Virgo network topology (high-radix switches, multi-plane design, up to 4x datacenter bandwidth), and TPUDirect RDMA bypassing CPU/DRAM for storage access. The **TPU 8i** (inference) takes a different path: 7th-gen SRAM with 3x more on-chip memory, a new Collectives Acceleration Engine (CAE) replacing four SparseCores and delivering 5x lower collective latency — specifically accelerating decode and chain-of-thought reasoning — and Boardify ICI topology scaling to 1,152 chips with 50% lower all-to-all latency. Both chips share Axion ARM-based hosts, 4th-gen liquid cooling, and the Pallas/MOSAIC/PyTorch software stack. Virgo connects 134,000 TPUs in a single fabric, over one million across sites.
 
 **Custom silicon challengers.** Groq's Language Processing Units (LPUs) achieve 800+ tokens/sec inference. Cerebras reports ~3,000 tokens/sec on its wafer-scale engine. AWS Trainium focuses on training cost efficiency. The common thread: purpose-built silicon for specific workloads delivers 3-10x better performance per watt compared to general-purpose GPUs — but NVIDIA's 20-year CUDA ecosystem (4M+ developers) remains the moat most challengers cannot cross.
 
@@ -82,7 +82,18 @@ The most significant shift in 2025-2026 was the collapse of the open-source vs. 
 | GLM-5.1 | Zhipu AI | Strong Chinese-language reasoning |
 | Kimi K2.6 | Moonshot | Sub-agent parallelism, strong in harness-driven work |
 
-**The practical trade-off:** 80% of enterprise use cases run adequately on open models — changing the cost, sovereignty, and deployment math entirely. The dominant production pattern is multi-model routing: cheap models for classification, frontier models for hard reasoning, specialized models for embeddings.
+**Real-world model economics from Cursor's Spring 2026 Developer Habits Report** — CursorBench 3.1, based on millions of actual agent sessions:
+
+| Model | Cost/Agent Request | Cost/Accepted Line | CursorBench 3.1 |
+|---|---|---|---|
+| Opus 4.7 (max) | $1.57 | 1.10¢ | 64.8% |
+| GPT-5.5 (high) | $0.81 | 1.09¢ | 62.6% |
+| Sonnet 4.6 | $0.44 | 0.54¢ | 49% |
+| **Composer 2.5** | **$0.18** | **0.18¢** | **63.2%** |
+
+The standout: Composer 2.5 matches frontier performance at 5–10% of the cost. Request costs vary 9x across models; cost per accepted line varies only 7x — pricier models produce more accepted code per request, narrowing but not closing the gap.
+
+**The practical trade-off:** 80% of enterprise use cases run adequately on open or mid-tier models — changing the cost, sovereignty, and deployment math entirely. The dominant production pattern is multi-model routing: cheap models for classification, frontier models for hard reasoning, specialized models for embeddings.
 
 **Critical insight:** Every model performs significantly better inside a structured agent harness than in raw chat. Harness investment is not optional for production use — framework choice moves benchmark performance by up to 30 percentage points on identical models.
 
@@ -201,7 +212,7 @@ Building agents is not building software. The agent development lifecycle — bu
 
 **Test:** Evals replace traditional tests. Capability evals give teams a hill to climb; regression evals catch drift. Anthropic's framework: start with hard tasks, climb, graduate passing evals to regression suites (Post 4).
 
-**Deploy:** Only 17% of organizations have fully deployed agents (Gartner 2026 CIO survey), though 60%+ expect to within two years. The gap between intent and deployment is the defining challenge.
+**Deploy:** Only 17% of organizations have fully deployed agents (Gartner 2026 CIO survey), though 60%+ expect to within two years. The gap between intent and deployment is the defining challenge. But within organizations that have deployed, trust is building rapidly: Cursor data shows the share of agent-generated changes accepted without any manual review step rose from **7% in January 2026 to 38% by May 2026** — a 5x increase in five months. Automation is no longer an aspiration. It is already at 38%.
 
 **Monitor:** Agent traces are deeply nested, payloads are large and growing (P99 payloads up from 364KB to 12MB), and the access patterns required to mine them are unique. LangChain built SmithDB — a purpose-built database for agent observability — because traditional infrastructure could not handle the workload.
 
@@ -215,6 +226,8 @@ A four-level maturity model is emerging:
 4. **Orchestration engineering** — Designing multi-agent systems with delegation, evaluation, and coordination
 
 Most teams are at level 1-2. The competitive advantage lies at levels 3-4.
+
+Cursor's Developer Habits Report provides empirical confirmation of why context engineering has become the dominant discipline. The input-to-output token ratio on real agent sessions rose from **4.5x in January 2026 to 11–13x by May 2026** — models are reading 2.5 times more context for every token they generate than they were five months ago. Input tokens now account for over 91% of input-output volume. And once cache is included, **~90% of all tokens consumed are cache reads** — agents are overwhelmingly reusing prior context rather than processing everything from scratch. Cache-read tokens cost significantly less than input tokens, making aggressive caching the single most important cost lever in agent infrastructure today.
 
 ### Agent Memory: From Context Stuffing to Cognitive Architecture
 
@@ -463,6 +476,7 @@ The pattern: MCP is no longer being used to connect AI to demo APIs. It is conne
 28. Taft, D. K. (2026). ["There is no accountability: AI coding agents are installing packages no one owns."](https://thenewstack.io/aikido-ai-agents-security/) The New Stack, May 27, 2026. Interview with Willem Delbare, CEO, Aikido Security. Key data: ~100K malicious packages/day; Snyk audit of ~4,000 skills found >⅓ had security flaws; CI/CD pipeline hijack escalation.
 28. OWASP (2025). [Top 10 for Agentic Applications 2025–2026.](https://owasp.org/www-project-top-10-for-large-language-model-applications/) First formal taxonomy of agent-specific security risks.
 29. Enterprise Agentic AI Infrastructure Report (2026). "The State of Enterprise Agentic AI Infrastructure: Frameworks, Memory, Runtime, and Observability in 2026." — Four-tiered memory model, Mem0 benchmarks (26% accuracy, 91% latency, 90% token reduction), Letta 6.5% working context, GraphRAG 63% ticket resolution improvement, anti-patterns catalog, OTel GenAI conventions.
-30. Kulkarni, S. (2026). "Designing Multi-Agent Research Systems for Deep Reasoning and Synthesis." Arc of AI Conference 2026, Thoughtworks. Healthcare/pharma deep research agent: $2.6B drug development cost context, Agentic RAG++ architecture, context anxiety, harness engineering principle.
+30. Cursor (2026). ["The Cursor Developer Habits Report — Spring 2026."](https://cursor.com/insights) Key data: 8.6K lines/dev/week (2.4x YoY), P99/P50 = 46x lines, 38% auto-accept rate, input/output ratio 4.5x→13x, 90% cache-read tokens, Composer 2.5 at 63.2% CursorBench at $0.18/request.
+31. Kulkarni, S. (2026). "Designing Multi-Agent Research Systems for Deep Reasoning and Synthesis." Arc of AI Conference 2026, Thoughtworks. Healthcare/pharma deep research agent: $2.6B drug development cost context, Agentic RAG++ architecture, context anxiety, harness engineering principle.
 27. OSSInsight (2026). [Trending AI Repositories — Real-Time Rankings.](https://ossinsight.io/trending/ai) Powered by 10.5B+ GitHub events.
 28. GitHub Octoverse 2025. 4.3M AI-related repositories; 178% YoY jump in LLM-focused projects.

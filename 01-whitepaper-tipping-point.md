@@ -191,6 +191,8 @@ The DORA 2025 Report confirms this empirically: "AI doesn't fix a team; it ampli
 
 Real-world production data validates this at the individual level too. ClickHouse CTO Alexey Milovidov, writing about a year of agents on one of the most demanding open-source C++ codebases in existence, put it plainly: *"Strong engineers get sharper with agents. Weaker engineers cause more damage. There is no shortcut around understanding the problem."* [26] The amplifier effect is not just organizational — it operates at the level of every individual on the team.
 
+Cursor's Spring 2026 Developer Habits Report, drawing on aggregated data from millions of developer sessions, puts hard numbers on the gap [27]. P99 developers now produce **46 times more lines than the median active developer** and merge **15 times more pull requests**. P90 developers produce 10 times more lines than the median. The Gini coefficient for AI usage concentration is 0.77 — highly unequal — and the absolute gap is growing even as the relative inequality holds steady: top developers are pulling further away in actual output volume every month. The median developer added approximately 700 lines per week in May 2026. The P90 developer added 8,800. This is what the amplifier effect looks like in longitudinal data.
+
 > **[FIGURE 5: "The Amplifier Effect"]**
 > *Split/mirror diagram. Left: High-Maturity Team — AI amplifies strong foundations into accelerated delivery, quality loops, faster feedback. Right: Low-Maturity Team — AI amplifies weak foundations into faster debt accumulation, review backlogs, instability.*
 > *Style: Symmetrical. Left in blue/green, right in orange/red.*
@@ -352,6 +354,7 @@ The tipping point is not coming. We are standing on it.
 15. Osmani, A. (2026). "Cognitive Surrender." *AddyOsmani.com*, May 2026. [Post](https://addyosmani.com/blog/cognitive-surrender/)
 16. Jevons, W. S. (1865). *The Coal Question: An Inquiry Concerning the Progress of the Nation, and the Probable Exhaustion of Our Coal-Mines.* Macmillan and Co.
 17. Milovidov, A. (2026). ["What ClickHouse Learned from a Year of Coding with AI Agents."](https://thenewstack.io/clickhouse-ai-coding-agents/) The New Stack, May 24, 2026. — "Strong engineers get sharper with agents. Weaker engineers cause more damage."
+18. Cursor (2026). ["The Cursor Developer Habits Report — Spring 2026."](https://cursor.com/insights) P99/P50 = 46x lines, 15x PRs; median 700 lines/week; P90 = 8,800 lines/week; Gini 0.77.
 
 ### Industry Analysis
 17. The New Stack (2026). "This Simple Infrastructure Gap Is Holding Back AI Productivity." Feb 2026. [Article](https://thenewstack.io/this-simple-infrastructure-gap-is-holding-back-ai-productivity/)

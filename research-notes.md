@@ -807,6 +807,96 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 
 ---
 
+## Cursor Developer Habits Report — Spring 2026 (Scraped 2026-05-29)
+
+**Source:** https://cursor.com/insights — "The Cursor Developer Habits Report, Spring 2026"
+Based on aggregated Cursor product and engineering data: agent usage, token consumption, accepted AI diffs, merged PR activity.
+
+### Developer Acceleration (Hard Data)
+
+**Code volume:**
+- Lines added/dev/week: Jan 2025: **3.6K** → May 2026: **8.6K** (2.4x in 16 months)
+- Lines added per PR (p75): Jan 2025: **125** → May 2026: **345** (2.75x)
+- Mega PRs (≥1,000 lines changed): Jan 2025: **8%** → May 2026: **13.8%** (nearly 2x)
+
+**Agent depth:**
+- Mean tool calls per session: March 2026: **113** → May 2026: **145** (+28% in 2 months)
+
+**Code survival:**
+- AI-generated code surviving 60 minutes: Jan 2026: **76%** → May 2026: **81%** (rising quality signal)
+
+### The Power User Gap (Key Finding for Posts 1, 3, 5)
+
+- AI usage concentration: Gini 0.77 for AI lines, 0.75 for spend — highly concentrated among top users
+- **P99 developers produce 46x more lines than median** and merge **15x more PRs than median**
+- P90 vs p50: 10x more lines, 4x more PRs
+- Median developer (p50): ~712 lines/week. P90: ~8,800 lines/week
+- Gap is **widening absolutely** even as Gini stays flat — top developers pulling further away in absolute terms
+
+### The Rise of Context (Key Finding for Posts 1, 2, 6)
+
+- Input/output token ratio: Jan 2026: **4.5x** → May 2026: **~11-13x** (2.5x increase in 5 months)
+- Input tokens now **>91%** of input-output volume (was 82% in Jan 2026)
+- Input tokens now **69.5%** of price-equivalent cost (was 47.5% in Jan 2026)
+- **Cache-read tokens dominate ALL token activity: ~90%** of total tokens are cache reads
+- Cache reads 90x larger than actual output tokens
+- Implication: context engineering and prompt caching are now the dominant cost levers, not output generation
+
+### Model Economics (CursorBench 3.1 — Internal Benchmark)
+
+**Cost per agent request:**
+- Opus 4.7: $1.57 (most expensive)
+- Opus 4.6: $0.86
+- GPT-5.5: $0.81
+- GPT-5.4: $0.46
+- Sonnet 4.6: $0.44
+- GPT-5.3 Codex: $0.30
+- Composer 2.5: $0.18 (cheapest)
+- **Range: 9x from cheapest to most expensive**
+
+**Cost per accepted line (efficiency measure):**
+- Opus 4.6: 1.19¢ (highest cost per accepted line)
+- GPT-5.5: 1.09¢
+- Sonnet 4.6: 0.54¢
+- Composer 2.5: 0.18¢
+- **Range: 7x — smaller than request cost gap (9x), suggesting expensive models produce more code per request**
+
+**CursorBench 3.1 score vs cost (frontier frontier):**
+- Composer 2.5: **63.2% at $0.55** — best value on the frontier
+- Opus 4.7 Max: 64.8% at $11.02 — highest performance but 20x the cost
+- GPT-5.5 High: **62.6% at $3.59** — strong mid-tier
+- Sonnet 4.6 Max: 49% at $3.09 — lowest frontier score
+- Key: **Composer 2.5 matches frontier models at 5-10% of the cost**
+
+### The Shift to Automation (Key Finding for Posts 5, 6, 7)
+
+- Changes accepted **without manual review**: Jan 2026: **7%** → May 2026: **38%** (5.4x in 5 months)
+- Security review is emerging as leading automation use case
+- Cursor SDK runs showing early demand for programmable agent infrastructure
+
+### Google TPU Architecture (ByteByteGo Infographic Notes)
+**Source:** ByteByteGo "What is Google's TPU?" infographic (shared by user)
+
+**TPU 8t (Training chip):**
+- SparseCore Advantage: offloads data-dependent collectives, eliminates zero-op bottlenecks
+- MXU overlap and balanced scaling; native FP4 (4-bit)
+- Virgo Network: multi-layer, high-radix switches, flat 2-layer, up to 4x DC bandwidth
+- Faster storage: TPUDirect RDMA, NIC bypass CPU/DRAM, IOT Lustre direct storage
+
+**TPU 8i (Inference chip):**
+- 7th Gen SRAM: 3x more SRAM on-chip vs prior gen, less core idle
+- CAE (Collectives Acceleration Engine): replaces 4x SparseCores, 5x lower collective latency, accelerates decode & chain-of-thought
+- Boardify ICI topology: high-radix, up to 1,152 chips, 50% lower latency (all-to-all)
+
+**Common spine:** Both use Axion ARM-based hosts, 4th-gen liquid cooling, Pallas/MOSAIC/PyTorch software stack, native FP4
+
+### Distribution to Articles
+- **Post 1:** Power user gap (46x/15x) validates amplifier thesis with real data. Context shift validates "engineering is not programming."
+- **Post 3:** Developer acceleration data (8.6K lines/week, 2.4x). Power user gap (46x). 38% auto-accept rate validates shift to autonomy.
+- **Post 5:** Power user gap widens — Gini stable but absolute inequality growing. Leaders must invest in enabling top developers AND protecting median developers.
+- **Post 6:** Model economics table (CursorBench 3.1), cache tokens (90% of all tokens), context shift, Composer 2.5 as value leader, GPU/TPU architecture details.
+- **Post 7:** 38% auto-acceptance, automation spreading — the shift to Level 3 autonomy is already visible in data.
+
 ## Enterprise Agentic AI Infrastructure Deep Research (May 2026)
 
 **Source:** Deep Research Report — "The State of Enterprise Agentic AI Infrastructure: Frameworks, Memory, Runtime, and Observability in 2026"
