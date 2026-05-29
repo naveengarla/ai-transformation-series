@@ -385,6 +385,73 @@ Seven prompts were given to the user for deep research on each post topic. The u
 - **OWASP Top 10 for Agentic Applications** (Dec 2025): First formal taxonomy of agent-specific risks.
 - **Regulation**: EU AI Act high-risk obligations take effect August 2026. Colorado AI Act enforceable June 2026.
 
+### Trendshift.io — 360-Day AI Trending Analysis (Researched 2026-05-29)
+
+**Key Trendshift pages to bookmark:**
+- [trendshift.io/topics/ai-agent](https://trendshift.io/topics/ai-agent) — Live AI agent repo rankings
+- [trendshift.io/topics/mcp](https://trendshift.io/topics/mcp) — MCP ecosystem repos
+- [trendshift.io/topics/ai-coding](https://trendshift.io/topics/ai-coding) — Coding assistant repos
+- [trendshift.io/topics/self-hosted](https://trendshift.io/topics/self-hosted) — Self-hosting repos
+- [trendshift.io/topics/ai-skills](https://trendshift.io/topics/ai-skills) — Skills/config repos
+- [trendshift.io/repository-engagements](https://trendshift.io/repository-engagements) — Monthly star velocity
+- [trendshift.io/insights](https://trendshift.io/insights) — Monthly topic distribution
+- [trendshift.io/github-trending-repositories](https://trendshift.io/github-trending-repositories) — Full trending history archive
+- [ossinsight.io/trending/ai](https://ossinsight.io/trending/ai) — Real-time from 10.5B GitHub events
+
+**Why Trendshift is valuable:** Unlike GitHub's black-box trending, Trendshift uses a consistent scoring algorithm + maintains a full historical archive. The `?trending-range=360` view shows what sustained traction over the past year, not just one viral week.
+
+**Past-year topic star totals (Trendshift, trending-range=1):**
+
+| Rank | Topic | Stars (past year) | Signal |
+|---|---|---|---|
+| 1 | #AI agent | 65.1K | Dominant category |
+| 2 | #AI coding assistant | 24.6K | Strong, maturing |
+| 3 | #AI skills | 20.6K | New category — exploding |
+| 4 | #Self-hosted | 16.3K | Privacy/sovereignty trend |
+| 5 | #AI workflow | 12.4K | Automation mainstream |
+| 6 | #Workflow automation | 11.9K | Adjacent to AI workflow |
+| 7 | #Curated list | 10.7K | Developers curating knowledge |
+| 8 | #MCP | 9.8K | Protocol ecosystem growing |
+| 9 | #AI memory | 8.2K | Memory layer becoming standard |
+| 10 | #Web scraping | 7.2K | Browser automation signal |
+
+**Top repos by total stars (360-day sustained traction):**
+
+| Repository | Stars | Category | Key insight |
+|---|---|---|---|
+| **Langflow** | ~147K | Visual agent builder | Top AI agent repo; drag-drop for RAG + multi-agent |
+| **Dify** | ~138K | Production AI platform | RAG + 100+ LLMs + MCP + observability |
+| **Open WebUI** | ~124K+ | Self-hosted AI interface | 270M+ Docker downloads; backbone of local AI |
+| **Browser-use** | ~92K | Web automation | Vision + DOM; MIT license; AI web browsing |
+| **Mem0** | ~52K | Agent memory layer | Persistent memory = what separates toy from prod agent |
+| **Flowise** | ~51K | Visual agent builder | Drag-drop agent creation, low barrier |
+| **vLLM** | ~68K | LLM inference engine | Fastest-growing by contributors; PagedAttention |
+| **LangGraph** | ~34.5K | Stateful agent framework | 34.5M monthly downloads; enterprise leader |
+
+**Monthly velocity (May 2026 — trendshift/repository-engagements):**
+- mattpocock/skills: **54,658 new stars in May 2026**
+- multica-ai/andrej-karpathy-skills: **50,341 new stars in May 2026**
+- Top topics this month: #AI agent (43.8K), #AI coding assistant (22.6K), #AI skills (18.6K), #Self-hosted (10.6K), #MCP (4.5K)
+
+**Five trend signals unique to Trendshift data:**
+
+1. **#AI skills is a new category that doesn't exist in traditional taxonomies** — CLAUDE.md files, agent.md configs, personal AI stacks. 20.6K stars past year. This is the "spec-driven development" trend made visible in GitHub star data.
+
+2. **Browser automation is mainstream** — Browser-use at 92K stars. Web browsing is no longer a specialist agent capability; it is table-stakes infrastructure.
+
+3. **Memory is the missing primitive** — Mem0 at 52K. The rise of #AI memory (8.2K topic stars) signals that developers have moved past "chatbot" toward "agent that remembers." This is the context engineering / intent debt problem in open-source form.
+
+4. **Self-hosting is a 16.3K-star-per-year trend** — Not niche. Privacy, sovereignty, cost. Dify, Open WebUI, Ollama, RAGFlow all thriving here.
+
+5. **MCP ecosystem is accelerating** — 9.8K topic stars, 97M→110M SDK downloads, 10K+ active servers. The protocol won. Now it is infrastructure.
+
+**Notable MCP ecosystem repos (trendshift/topics/mcp):**
+- MCP server security scanner (vulnerability detection)
+- Self-extending MCP server (one tool that creates other tools)
+- Rust-native Office document processing MCP (Excel/Word/PPT, sub-ms)
+- Immich photo management via MCP
+- Indian stock research MCP (live Screener.in data → Claude as equity analyst)
+
 ### GitHub Trending AI — Top Repos & Ecosystem Signals (Researched 2026-05-29)
 
 **Tracking sources:**
