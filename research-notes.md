@@ -385,6 +385,50 @@ Seven prompts were given to the user for deep research on each post topic. The u
 - **OWASP Top 10 for Agentic Applications** (Dec 2025): First formal taxonomy of agent-specific risks.
 - **Regulation**: EU AI Act high-risk obligations take effect August 2026. Colorado AI Act enforceable June 2026.
 
+### GitHub Trending AI — Top Repos & Ecosystem Signals (Researched 2026-05-29)
+
+**Tracking sources:**
+- [OSSInsight Trending AI](https://ossinsight.io/trending/ai) — Real-time rankings from 10.5B+ GitHub events
+- [ByteBytego Top AI Repos](https://blog.bytebytego.com/p/top-ai-github-repositories-in-2026)
+- [Fungies.io Top 20 Agent Frameworks](https://fungies.io/top-github-repositories-ai-agent-frameworks-2026/)
+- GitHub Octoverse 2025: 4.3M AI repos, 178% YoY jump in LLM-focused projects
+
+**Top repos by stars (mid-2026):**
+
+| Repository | Stars | Category | Signal |
+|---|---|---|---|
+| OpenClaw | ~210K+ | Open-source AI | Fastest-growing ever — 9K → 60K in days |
+| AutoGPT | ~167K | Autonomous agents | Platform for deploying agent fleets at scale |
+| Karpathy CLAUDE.md | ~156K | AI coding workflow | Personal AI config files are a category now |
+| Langflow | ~146K | Visual agent builder | Low-code agent building is mainstream |
+| Dify | ~136K | Visual agent builder | RAG + agent orchestration + MCP integration |
+| Open WebUI | ~124K+ | Self-hosted AI interface | 282M downloads — self-hosting is back |
+| n8n | ~162K | Workflow automation | Native AI + MCP client/server |
+| ComfyUI | ~106K | Image generation | Visual workflow for media AI |
+| vLLM | ~68K | Inference engine | De facto standard for serving LLMs |
+| RAGFlow | ~70K+ | RAG platform | Grounded, traceable enterprise knowledge |
+| Mem0 | ~52K | Agent memory | Memory layer for production agents |
+| Flowise | ~51K | Visual agent builder | Drag-and-drop agent creation |
+| LangGraph | ~32.3K | Agent framework | Enterprise-grade stateful orchestration |
+
+**Five macro trends from GitHub data:**
+
+1. **Visual/Low-code agent builders dominate top stars** — 3 of top 5 repos (Langflow, Dify, Flowise) are visual builders. "Everyone's a builder" is manifesting in star counts.
+
+2. **Personal AI stacks are a category** — garrytan/gstack (50K stars in 16 days), Karpathy CLAUDE.md (156K stars), mattpocock/skills (10K). Developers are sharing their personal agent configurations as open source. This validates spec-driven development and context engineering as mainstream.
+
+3. **Self-hosting renaissance** — OpenClaw, Open WebUI (282M downloads), Ollama, RAGFlow, Dify — all built for on-premise, privacy-first deployment. Sovereignty is not just a government concern; it is a developer concern.
+
+4. **Rust is becoming the agent infrastructure language** — 16x increase in star velocity for Rust AI tools (25/day in 2023 → 404/day in 2026). Four categories: Agent OS/Runtime (~38%), CLI Tools (~26%), Browser Automation (~20%), Model Tooling (~16%). When agents have root access, memory safety is non-optional.
+
+5. **Multi-agent systems, not single chatbots** — Every top repo is a system of specialized workers. The "talk to one model, get one answer" era is quietly being replaced by "a team of agents collaborating."
+
+**Weekly velocity signals (May 2026):**
+- claude-context (semantic code search MCP server): 10.6K stars/week
+- codegraph: 14.1K new stars in one week
+- ~290K aggregate stars across top 10 trending, 73K new in 7 days
+- Dominant theme: infrastructure for AI agents in production — memory, context, local execution
+
 ### Distribution to Articles
 - **Post 1 (Tipping Point)**: AAIF formation as evidence of industry recognizing the systemic challenge. Regulation timeline (EU AI Act Aug 2026).
 - **Post 2 (Architect)**: Microsoft Agent Framework declarative agents (YAML), Anthropic Agent SDK as reference architecture, ADK Task API for structured delegation, governance toolkit as new architectural primitive.
