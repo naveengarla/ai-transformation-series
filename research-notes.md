@@ -385,6 +385,146 @@ Seven prompts were given to the user for deep research on each post topic. The u
 - **OWASP Top 10 for Agentic Applications** (Dec 2025): First formal taxonomy of agent-specific risks.
 - **Regulation**: EU AI Act high-risk obligations take effect August 2026. Colorado AI Act enforceable June 2026.
 
+### Trendshift Top-100 Scraped (30-Day Window, 2026-05-29) — via Playwright MCP
+
+Full list scraped from: https://trendshift.io/github-trending-repositories?trending-range=30&trending-limit=100
+
+**Raw repo list (ranked 1–100):**
+1. NVlabs/Eagle
+2. colbymchenry/codegraph ← `#AI coding assistant`
+3. tinyhumansai/openhuman ← `#AI agent #AI memory #Digital human`
+4. Lum1104/Understand-Anything ← `#AI coding assistant #AI skills`
+5. anthropics/claude-plugins-official
+6. Hmbown/CodeWhale
+7. TauricResearch/TradingAgents
+8. ruvnet/ruflo
+9. ruvnet/RuView
+10. anthropics/financial-services
+11. oven-sh/bun
+12. harry0703/MoneyPrinterTurbo
+13. bytedance/UI-TARS-desktop
+14. warpdotdev/warp
+15. obra/superpowers
+16. CloakHQ/CloakBrowser
+17. rohitg00/agentmemory ← `#AI memory`
+18. rohitg00/ai-engineering-from-scratch
+19. affaan-m/ECC
+20. K-Dense-AI/scientific-agent-skills ← `#AI skills`
+21. soxoj/maigret
+22. HKUDS/CLI-Anything
+23. addyosmani/agent-skills ← `#AI skills`
+24. anthropics/knowledge-work-plugins
+25. Imbad0202/academic-research-skills ← `#AI skills`
+26. microsoft/markitdown
+27. mattpocock/skills ← `#AI skills`
+28. multica-ai/andrej-karpathy-skills ← `#AI skills`
+29. browserbase/skills ← `#AI skills`
+30. hardikpandya/stop-slop
+31. PriorLabs/TabPFN
+32. Leonxlnx/taste-skill ← `#AI skills`
+33. virattt/dexter
+34. yikart/AiToEarn
+35. EveryInc/compound-engineering-plugin
+36. z-lab/dflash
+37. calcom/cal.diy
+38. datawhalechina/hello-agents ← `#AI agent`
+39. supertone-inc/supertonic
+40. 1jehuang/jcode
+41. docusealco/docuseal
+42. twentyhq/twenty
+43. dotnet/skills ← `#AI skills`
+44. playcanvas/supersplat
+45. apernet/hysteria
+46. InsForge/InsForge
+47. Anil-matcha/Open-Generative-AI
+48. decolua/9router
+49. mukul975/Anthropic-Cybersecurity-Skills ← `#AI skills`
+50. LearningCircuit/local-deep-research
+51. ChromeDevTools/chrome-devtools-mcp ← `#MCP`
+52. influxdata/telegraf
+53. Flowseal/zapret-discord-youtube
+54. HKUDS/AI-Trader
+55. Fincept-Corporation/FinceptTerminal
+56. bwya77/vscode-dark-islands
+57. datawhalechina/easy-vibe
+58. AIDC-AI/Pixelle-Video
+59. anthropics/claude-code ← flagship
+60. craft-ai-agents/craft-agents-oss
+61. shiyu-coder/Kronos
+62. DigitalPlatDev/FreeDomain
+63. millionco/react-doctor
+64. ggml-org/llama.cpp ← inference engine
+65. BigBodyCobain/Shadowbroker
+66. qbittorrent/qBittorrent
+67. public-apis/public-apis
+68. LadybirdBrowser/ladybird
+69. anonfaded/FadCam
+70. rowboatlabs/rowboat ← `#AI agent`
+71. earendil-works/pi
+72. jundot/omlx
+73. mksglu/context-mode
+74. byoungd/English-level-up-tips
+75. czlonkowski/n8n-mcp ← `#MCP`
+76. can1357/oh-my-pi
+77. cocoindex-io/cocoindex
+78. anthropics/skills ← `#AI skills`
+79. Alishahryar1/free-claude-code
+80. tech-leads-club/agent-skills ← `#AI skills`
+81. manaflow-ai/cmux
+82. rmyndharis/OpenWA
+83. roboflow/supervision
+84. ShareX/ShareX
+85. simstudioai/sim
+86. VectifyAI/PageIndex
+87. p-e-w/heretic
+88. cursor/plugins
+89. awslabs/aidlc-workflows ← AWS
+90. msitarzewski/agency-agents
+91. jwasham/coding-interview-university
+92. rasbt/LLMs-from-scratch
+93. odoo/odoo
+94. danielmiessler/Personal_AI_Infrastructure
+95. rtk-ai/rtk
+96. masterking32/MasterDnsVPN
+97. run-llama/liteparse
+98. vercel-labs/open-agents
+99. NirDiamant/agents-towards-production
+100. multica-ai/multica
+
+**Key pattern analysis (30-day window):**
+
+**1. Skills repos are the breakout category** — 11 of 100 repos are `/skills` or agent config files:
+mattpocock/skills, multica-ai/andrej-karpathy-skills, browserbase/skills, addyosmani/agent-skills, K-Dense-AI/scientific-agent-skills, academic-research-skills, Leonxlnx/taste-skill, dotnet/skills, anthropics/skills, tech-leads-club/agent-skills, mukul975/Anthropic-Cybersecurity-Skills
+→ Validates Post 3 thesis: structured intent files are a new open-source asset class
+
+**2. Anthropic ecosystem dominates** — 5 direct Anthropic repos in top 100:
+anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), anthropics/knowledge-work-plugins (#24), anthropics/claude-code (#59), anthropics/skills (#78)
+→ Validates Post 6: Claude Code as the platform, not just a tool
+
+**3. colbymchenry/codegraph is #2** — "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local"
+→ This is actually the codegraph MCP we use in this very project! Strong signal: context/token efficiency is a top developer concern
+
+**4. Memory is its own category** — rohitg00/agentmemory (#17), tinyhumansai/openhuman (#3 with #AI memory tag)
+→ Validates Post 2/3: memory as architectural primitive
+
+**5. MCP tooling appearing** — ChromeDevTools/chrome-devtools-mcp (#51), czlonkowski/n8n-mcp (#75)
+→ MCP ecosystem building out from dev tools (Chrome DevTools → n8n workflow automation)
+
+**6. Non-AI repos still in top 100** — bun (#11), warp (#14), qbittorrent (#66), public-apis (#67), Ladybird (#68)
+→ GitHub trending is not purely AI — developers are still building infrastructure and general tools
+
+**7. AWS appearing** — awslabs/aidlc-workflows (#89)
+→ Hyperscalers now releasing agent workflow tools as open source
+
+**8. New interesting repos to investigate:**
+- Lum1104/Understand-Anything (#4) — "graphs that teach > graphs that impress"
+- obra/superpowers (#15)
+- LearningCircuit/local-deep-research (#50) — local-first deep research
+- cocoindex-io/cocoindex (#77) — ETL/stream processing for AI
+- NirDiamant/agents-towards-production (#99)
+- vercel-labs/open-agents (#98)
+- simstudioai/sim (#85)
+
 ### Trendshift.io — 360-Day AI Trending Analysis (Researched 2026-05-29)
 
 **Key Trendshift pages to bookmark:**
