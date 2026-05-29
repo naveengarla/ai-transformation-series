@@ -807,6 +807,59 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 
 ---
 
+## Security — AI Agent Supply Chain Attack Surface (Researched 2026-05-29)
+
+**Source:** ["There is no accountability": AI coding agents are installing packages no one owns](https://thenewstack.io/aikido-ai-agents-security/)
+The New Stack, May 27, 2026. Interview with Willem Delbare, CEO/CTO, Aikido Security.
+
+### Core Problem
+When a human developer installs a package there is at least implicit accountability. When an AI agent acts autonomously — installing packages, pulling dependencies, adding tools — **there is no accountability unless someone has deliberately assumed ownership.** Most enterprises have no policy, no visibility, and no one accountable.
+
+Marketing, sales, and product teams are now using AI agents without realising packages and agent skills are being installed in their local environments. Security teams have no control, no visibility, and no way to identify affected machines after an incident.
+
+### The Attack Surface Is Escalating Fast
+- **Aikido Intel** detects ~100,000 malicious packages/day using dual-LLM pipeline + human review
+- **In 12 months:** went from single-package compromises → self-replicating worms → **full CI/CD pipeline hijacks chaining across registries**
+- AI has lowered the barrier to entry and increased attack velocity: work that required a skilled hacker for hours can now be dispatched to AI agents
+- "$8 ChatGPT subscription" is enough to write sophisticated supply chain malware
+
+### Key Vendors in the AI Agent Security Space (May 2026)
+
+| Vendor | Approach | Notable |
+|---|---|---|
+| **Aikido Security** | Endpoint agent — inspects packages, plugins, IDE/browser extensions before install; blocks malware; 48-hour install hold; MCP server coverage | Aikido Infinite: continuous AI pen testing |
+| **Socket** | Real-time detection/blocking of malicious open source packages | $60M Series C at $1B valuation; identified malicious Axios dependency in 6 minutes |
+| **Endor Labs** | AURI: Skills plugin + MCP server + CLI detecting vulnerabilities in real time within Cursor/Claude Code | Launched March 2026 |
+| **Chainguard** | Hardened minimal container images + curated package repos — securing before code is written | Infrastructure-layer approach |
+| **Snyk** | Audited ~4,000 agent skills — **>⅓ contained at least one security flaw** | First comprehensive audit of skills ecosystem |
+| **Arcjet** | Runtime enforcement inside agentic workflows: prompt injection + PII blocking | |
+| **Mobb Security** | AI agent skill supply chain vulnerabilities | |
+
+### Snyk Skills Audit Finding
+**More than one-third of nearly 4,000 scanned agent skills contained at least one security flaw.** This is the skills ecosystem — the CLAUDE.md files, agent.md, and skill registries that developers are sharing at 100k+ stars on GitHub. The attack surface is not theoretical.
+
+### Aikido's Shared Responsibility Model
+- Security team sets guardrails (policies, thresholds, approved ecosystems)
+- Developer moves freely within them
+- Agent operates inside that envelope
+- Same model as human developers — just now enforced at the install layer
+
+### Technical Detail: 48-Hour Install Block
+- Targets the window where most malicious packages are caught
+- Configurable per ecosystem (npm = 48hrs makes sense; Maven Central with GPG signing = may not need it)
+- Packages/groups can be whitelisted; one-off approvals available
+- Falls back to last approved version, not blocked entirely
+
+### Coverage in Aikido Endpoint (May 2026)
+- Models/platforms: Gemini, OpenAI, GitHub Copilot, xAI, MCP Servers, Claude Code, skills.sh
+- Skill marketplaces: skills.sh and VS Code Marketplace
+- Covers: packages, plugins, IDE extensions, browser extensions, AI models, AI agents
+
+### Distribution to Articles
+- **Post 6 (Emerging Tech) — Layer 7 Security section:** This entire finding belongs here. The "no accountability" gap, the 100K malicious packages/day, the Snyk audit (>⅓ of skills have flaws), and the emerging vendor landscape should all go into Post 6's governance/security layer.
+- **Post 9 (if written) or Post 6:** The skills security finding directly intersects with Post 3's thesis about skills files as a new open-source asset — they're also a new attack surface.
+- **Post 5 (Leadership):** "No one has made the decision, and no one owns the risk" — this is a Deming-principle failure at the organizational level. Leaders need explicit AI security ownership.
+
 ## Notes
 
 - **Name correction:** Fiona Fung (not "Fiona Fun"). Title: Director of Engineering for Claude Code, Anthropic.
