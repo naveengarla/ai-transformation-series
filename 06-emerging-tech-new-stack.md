@@ -219,11 +219,77 @@ Agents can improve at three layers:
 
 ---
 
+## What the Open-Source Community Is Actually Building
+
+Theory and analyst reports tell you where the industry says it is heading. GitHub star counts tell you where developers are actually investing their attention. The two views are not always the same. Based on the Trendshift top-100 repositories over the past 30 days, five signals stand out that are not yet fully captured in the mainstream AI narrative.
+
+### Signal 1: Token and cost optimization is the #1 developer pain point
+
+The most consistently trending repo (#1 by GitHub trending frequency over the past month) is colbymchenry/codegraph — a pre-indexed knowledge graph for Claude Code that exists for a single reason: *fewer tokens, fewer tool calls, 100% local*. It is not a new agent capability. It is a cost reduction tool.
+
+Three other repos in the top 100 address the same problem from different angles:
+- **rtk-ai/rtk** (#94, 56.2k stars): CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies.
+- **decolua/9router** (#47): "Unlimited FREE AI coding. Auto-fallback, RTK -40% tokens, never hit limits."
+- **mksglu/context-mode** (#72): Context window optimization with 98% reduction in tool output across 15 platforms.
+
+This is a strong signal: developers are hitting real cost and rate-limit walls daily. The promise of AI productivity gains is being eaten by token bills and throttling. Token economics is not an accounting problem — it is an architectural problem that requires engineering solutions.
+
+### Signal 2: Harness optimization has a bigger community than new agent frameworks
+
+The two highest-starred repos in the entire top-100 list (by absolute stars) are not new models, not new frameworks, and not new protocols:
+
+- **obra/superpowers** (#14, **212.1k stars**, trending 11 days of the past 30): *"An agentic skills framework and software development methodology that works."*
+- **affaan-m/ECC** (#18, **198.3k stars**, trending 6 days): *"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."*
+
+Both are about making existing agents run better — more reliably, more cheaply, with better memory and tighter constraints. The community's energy is not in building new agents from scratch. It is in making the agents we already have work properly. This validates the architectural thesis from Post 2: the harness layer is where most of the real engineering value lives.
+
+### Signal 3: Skills files are a new open-source asset class with massive engagement
+
+The data now shows just how large the skills file phenomenon has become:
+- multica-ai/andrej-karpathy-skills: **161.4k stars** — from a single CLAUDE.md file
+- anthropics/skills: **143.4k stars** — Anthropic's public skills repository
+- mattpocock/skills: **111k stars** — "Skills for Real Engineers. Straight from my .claude directory"
+- addyosmani/agent-skills: **46.9k stars** — "Production-grade engineering skills for AI coding agents"
+
+These numbers are larger than most full-featured frameworks. A well-crafted agent configuration file — structured intent encoding in plain text — is generating more community engagement than entire codebases. This is spec-driven development (Post 3) being validated not by conferences but by developer voting.
+
+The daily trending data confirms the velocity: #AI skills is the **3rd fastest-growing topic by daily star count**, behind only #AI agent and #AI coding assistant. A category that barely existed 12 months ago is now third in the ecosystem.
+
+### Signal 4: Fintech is where agents are already in production
+
+Six of the top-100 trending repos are explicitly in the financial services vertical:
+- TauricResearch/TradingAgents (#6, 80.7k): Multi-agent financial trading
+- anthropics/financial-services (#9, 28.7k): Anthropic's finance vertical repo
+- HKUDS/AI-Trader (#53): 100% Fully-Automated Agent-Native Trading
+- virattt/dexter (#32): Autonomous agent for deep financial research
+- shiyu-coder/Kronos (#60): Foundation Model for Financial Markets
+- Fincept-Corporation/FinceptTerminal (#54): Professional finance analytics terminal
+
+Finance is not a use case being explored. It is a vertical already deploying AI agents at scale — because the value of a correct financial decision justifies the token cost and the latency. This is the pattern to watch for how other enterprise verticals (healthcare, legal, logistics) will follow.
+
+### Signal 5: The MCP ecosystem is attaching to real developer tools
+
+The five MCP-tagged repos in the top-100 are not toy integrations:
+- **ChromeDevTools/chrome-devtools-mcp** (#50, 42.3k stars): Chrome DevTools for coding agents. This means AI agents can now debug running applications the same way a human developer would.
+- **czlonkowski/n8n-mcp** (#74, 21.4k): AI builds n8n workflow automations through natural language.
+- **rohitg00/agentmemory** (#16, 19.6k): MCP-connected persistent memory.
+- **mksglu/context-mode** (#72): Context optimization via MCP.
+- **anthropics/financial-services** (#9): Financial services via MCP.
+
+The pattern: MCP is no longer being used to connect AI to demo APIs. It is connecting AI to the tools that developers actually use daily — browser debugging, workflow automation, memory systems. When Chrome DevTools becomes an MCP server, it signals that MCP is becoming infrastructure, not a feature.
+
+> **[FIGURE 5: "What GitHub Stars Tell Us — The Real Developer Priorities"]**
+> *Visual type: Bubble chart. X-axis: category (Token optimization / Harness optimization / Skills/config / Memory / MCP ecosystem / Fintech vertical). Y-axis: total stars in top-100 repos. Bubble size: number of repos in that category. The chart should make visually clear that token optimization and harness optimization are the dominant community interests, not framework selection.*
+> *Key callouts: obra/superpowers (212k), ECC (198k), karpathy-skills (161k), anthropics/skills (143k), codegraph (#1 trending).*
+> *Style: Data visualization. The reader should be surprised — these are not the categories that conference talks emphasize.*
+
+---
+
 ## What Every Stakeholder Should Take Away
 
-**For architects:** The stack is seven layers deep, and decisions cascade. Model choice affects token cost, which affects context architecture, which affects agent design, which affects eval strategy. Design for multi-model routing, not single-model lock-in. Treat context topology as a first-class architectural decision.
+**For architects:** The stack is seven layers deep, and decisions cascade. Model choice affects token cost, which affects context architecture, which affects agent design, which affects eval strategy. Design for multi-model routing, not single-model lock-in. Treat context topology as a first-class architectural decision. Token economics is a design constraint, not an accounting line item — the community has validated this by making token reduction tools the most consistently trending category on GitHub.
 
-**For developers:** The multi-tool stack is the norm — CLI agent for deep work, IDE extension for inline completions, open-source tool for flexibility. Invest in context engineering and evals. Framework choice matters as much as model choice (up to 30-point swing on benchmarks).
+**For developers:** The multi-tool stack is the norm — CLI agent for deep work, IDE extension for inline completions, open-source tool for flexibility. Invest in context engineering and evals. Framework choice matters as much as model choice (up to 30-point swing on benchmarks). Build and share skills files — the community has voted with 100k+ stars that well-crafted agent configuration is as valuable as code.
 
 **For testers:** Eval-driven development is the new testing discipline. The observability gap (52% offline evals, 37% online) is where the verification deficit lives. Build eval pipelines early; they compound.
 
@@ -275,3 +341,8 @@ Agents can improve at three layers:
 23. Anthropic (2026). ["Effective Context Engineering."](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 24. Anthropic (2026). ["Demystifying Evals."](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 25. LangChain (2026). ["The Rise of Context Engineering."](https://www.langchain.com/blog/the-rise-of-context-engineering)
+
+**Open-Source Community Signals**
+26. Trendshift (2026). [Top-100 GitHub Trending Repositories — 30-Day Window](https://trendshift.io/github-trending-repositories?trending-range=30&trending-limit=100). Scraped 2026-05-29.
+27. OSSInsight (2026). [Trending AI Repositories — Real-Time Rankings.](https://ossinsight.io/trending/ai) Powered by 10.5B+ GitHub events.
+28. GitHub Octoverse 2025. 4.3M AI-related repositories; 178% YoY jump in LLM-focused projects.
