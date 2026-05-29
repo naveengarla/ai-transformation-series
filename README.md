@@ -35,19 +35,17 @@ Written from the perspective of a senior architect with over two decades of indu
 3. **[The Developer's Identity Shift: From Writing Code to Steering Intent](03-developer-identity-shift.md)**
    > What changes for the person at the keyboard. Covers the new T-shaped engineer, the orchestration tax, cognitive surrender, spec-driven development, what to de-skill and what to reskill, the occupational identity crisis, DORA's Builder Mindsets, and three paths forward (resist, adapt, balance).
 
-### Upcoming
+4. **[Testing in a Non-Deterministic World: The Death of Expected Output](04-testing-non-deterministic-world.md)**
+   > How testing must reinvent itself when AI makes code generation cheap but verification expensive. The circular review problem, eval-driven development and hill climbing, mutation testing revival (Meta at scale), the shift from Boolean to statistical validation, multi-agent verification (TrioXpert: +163% root-cause localization), and DORA's rework rate as the new quality signal.
 
-4. **Testing in a Non-Deterministic World: The Death of Expected Output**
-   > How testing must reinvent itself when AI makes code generation cheap but verification expensive. Eval-driven development, the quadratic scaling problem, statistical validation replacing Boolean validation, multi-agent verification, and DORA's rework rate as the new quality signal.
+5. **[Leadership in the AI-Native Org: You Can't Mandate T-Shaped in a Broken System](05-leadership-ai-native-org.md)**
+   > Organizational structure, metrics, and culture in the AI era. The Deming principle applied to AI, redefining productivity measurement (vanity vs outcome metrics), DORA's seven AI capabilities (451% adoption with clear policy), the junior developer pipeline crisis (-40% demand, talent hollow), flatter cross-functional teams, new roles (knowledge architects, agent reliability engineers), and psychological safety as structural prerequisite.
 
-5. **Leadership in the AI-Native Org: You Can't Mandate T-Shaped in a Broken System**
-   > Organizational structure, metrics, and culture in the AI era. Redefining productivity measurement, protecting productive struggle, managers as ICs, the junior developer pipeline crisis, new roles (knowledge architects, agent reliability engineers), and the DORA AI Capabilities Model.
+6. **[Emerging AI Tech Every Stakeholder Should Know: The New Stack](06-emerging-tech-new-stack.md)**
+   > The agent development lifecycle (build/test/deploy/monitor), context engineering as the discipline that replaced prompt engineering (4-level maturity model), multi-agent architecture patterns (orchestrator-worker, evaluator-optimizer, multi-model routing), MCP and A2A under Linux Foundation governance, open models vs frontier models (MMLU gap: 17.5 → 0.3 points), sandboxes as universal primitive, continual learning (model/harness/context layers), and agent governance.
 
-6. **Emerging AI Tech Every Stakeholder Should Know: The New Stack**
-   > Agent harnesses, context engineering, multi-agent architectures, the agent development lifecycle, continual learning, open models vs frontier models, sandboxes, MCP, and agent governance.
-
-7. **What It All Means: The 2030 Developer Ecosystem**
-   > Where this is heading. Bespoke software as default, the interface evolution, the junior developer speedrun problem, intellectual control over codebases, human attention as the scarcest resource, and the agency you have to shape what comes next.
+7. **[What It All Means: The 2030 Developer Ecosystem](07-the-2030-developer-ecosystem.md)**
+   > Where this is heading. Bespoke software as default (SaaSocalypse, creation cost inversion), the interface evolution (voice-native, personalized, asynchronous), the talent hollow propagating through the pipeline to 2036, intellectual control over codebases (AI for comprehension, not just generation), human attention as the scarcest resource, and the agency you have to shape what comes next.
 
 ---
 
@@ -80,6 +78,10 @@ ai-transformation-series/
   01-software-engineering-tipping-point.md   # Paper 1 (original blog draft, retained as reference)
   02-architects-new-role.md                  # Paper 2
   03-developer-identity-shift.md             # Paper 3
+  04-testing-non-deterministic-world.md      # Paper 4
+  05-leadership-ai-native-org.md             # Paper 5
+  06-emerging-tech-new-stack.md              # Paper 6
+  07-the-2030-developer-ecosystem.md         # Paper 7
 ```
 
 ---
@@ -89,12 +91,14 @@ ai-transformation-series/
 | Paper | Status | Format |
 |---|---|---|
 | 1. Tipping Point | Draft complete, reviewed, revised | Whitepaper |
-| 2. Architect's Role | Draft complete | Whitepaper (pending restructure) |
-| 3. Developer Identity | Draft complete | Whitepaper (pending restructure) |
-| 4. Testing | Research allocated, not yet written | — |
-| 5. Leadership | Research allocated, not yet written | — |
-| 6. Emerging Tech | Research allocated, not yet written | — |
-| 7. 2030 Vision | Research allocated, not yet written | — |
+| 2. Architect's Role | Draft complete | Article |
+| 3. Developer Identity | Draft complete | Article |
+| 4. Testing | Draft complete | Article |
+| 5. Leadership | Draft complete | Article |
+| 6. Emerging Tech | Draft complete | Article |
+| 7. 2030 Vision | Draft complete | Article |
+
+All 7 papers have first drafts. Post 1 has been through reviewer feedback and revision. Posts 2-7 are ready for review and enrichment with additional deep research.
 
 ---
 
