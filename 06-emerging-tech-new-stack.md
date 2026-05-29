@@ -213,6 +213,33 @@ Agents can improve at three layers:
 **Safety:** Hooks (Anthropic), classifier gates, human-in-the-loop middleware — the more autonomous the agent, the stronger the safety infrastructure must be.
 **Gartner warning:** More than 40% of agent projects will fail by 2027. Organizations that skip governance foundations and jump to agents see failures within 12 months.
 
+### Security: The Accountability Gap Nobody Has Closed
+
+There is a security problem specific to AI-native development that most organizations have not addressed, and it is growing fast.
+
+When a human developer installs a package, there is at least implicit accountability. When an AI coding agent installs a package, pulls a dependency, or adds a tool autonomously — as Claude Code, GitHub Copilot, Cursor, and others now do routinely — there is no accountability unless someone has deliberately assumed ownership. At most organizations right now, no one has.
+
+Aikido Security CEO Willem Delbare described this to The New Stack in May 2026: "At most companies right now, it's undefined, and that's a real risk." His company's telemetry shows that marketing, sales, and product teams are using AI agents without realizing that packages and agent skills are being installed in their local environments. Security teams have no control, no visibility, and no way to identify affected machines after an incident.
+
+The attack surface is not theoretical and it is escalating. Aikido Intel detects approximately 100,000 malicious packages per day. In twelve months, the threat landscape went from single-package compromises to self-replicating worms to full CI/CD pipeline hijacks chaining across registries. AI has dramatically lowered the barrier to entry: work that previously required a skilled attacker for hours can now be dispatched to an AI agent.
+
+The skills file phenomenon described earlier in this post — the CLAUDE.md configurations, agent.md files, and skill registries that developers are sharing at 100k+ GitHub stars — is simultaneously a new attack surface. Snyk's security researchers completed the first comprehensive audit of the AI agent skills ecosystem in early 2026, scanning nearly 4,000 skills. **More than one-third contained at least one security flaw.** The same community-driven asset class that is accelerating developer productivity is being populated with vulnerable and potentially malicious content.
+
+An emerging vendor ecosystem is forming around this gap:
+
+| Vendor | Approach |
+|---|---|
+| **Aikido Security** | Endpoint agent inspecting packages, plugins, IDE/browser extensions before install; 48-hour install hold; MCP server coverage; continuous AI penetration testing (Aikido Infinite) |
+| **Socket** | Real-time detection of malicious open source packages ($60M Series C, $1B valuation); identified malicious Axios dependency within 6 minutes |
+| **Endor Labs** | AURI — Skills plugin + MCP server + CLI detecting vulnerabilities in real time within coding assistants (launched March 2026) |
+| **Chainguard** | Hardened container images and curated package repos — securing the infrastructure layer before any code is written |
+| **Arcjet** | Runtime enforcement inside agentic workflows — prompt injection blocking, PII detection |
+| **Mobb Security** | AI agent skill supply chain vulnerability remediation |
+
+The emerging security model mirrors the shared responsibility model that works for human developers: security teams set the guardrails (policies, approved ecosystems, thresholds), developers and agents operate freely within them. The difference in an AI-native environment is that agents act faster, at higher volume, and across a broader surface than any human developer — making the guardrail layer more critical, not less.
+
+The OWASP Top 10 for Agentic Applications (published December 2025) provides the first formal taxonomy of agent-specific risks, covering prompt injection, insecure tool use, excessive autonomy, and supply chain compromise. If your organization has not mapped its agent deployments against this taxonomy, that is the starting point.
+
 > **[FIGURE 4: "The Agent Development Lifecycle"]**
 > *Visual type: Circular lifecycle with four phases (Build → Test → Deploy → Monitor) connected by traces at the center. Each phase annotated with key activities and dominant tooling.*
 > *Style: Lifecycle diagram emphasizing iteration, not linearity.*
@@ -344,5 +371,7 @@ The pattern: MCP is no longer being used to connect AI to demo APIs. It is conne
 
 **Open-Source Community Signals**
 26. Trendshift (2026). [Top-100 GitHub Trending Repositories — 30-Day Window](https://trendshift.io/github-trending-repositories?trending-range=30&trending-limit=100). Scraped 2026-05-29.
+27. Taft, D. K. (2026). ["There is no accountability: AI coding agents are installing packages no one owns."](https://thenewstack.io/aikido-ai-agents-security/) The New Stack, May 27, 2026. Interview with Willem Delbare, CEO, Aikido Security. Key data: ~100K malicious packages/day; Snyk audit of ~4,000 skills found >⅓ had security flaws; CI/CD pipeline hijack escalation.
+28. OWASP (2025). [Top 10 for Agentic Applications 2025–2026.](https://owasp.org/www-project-top-10-for-large-language-model-applications/) First formal taxonomy of agent-specific security risks.
 27. OSSInsight (2026). [Trending AI Repositories — Real-Time Rankings.](https://ossinsight.io/trending/ai) Powered by 10.5B+ GitHub events.
 28. GitHub Octoverse 2025. 4.3M AI-related repositories; 178% YoY jump in LLM-focused projects.
