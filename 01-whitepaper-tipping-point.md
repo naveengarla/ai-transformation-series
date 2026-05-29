@@ -64,9 +64,9 @@ When writing code becomes cheaper, the pressure does not disappear. It moves dow
 
 This paper examines that migration in detail: where the bottlenecks are moving, what breaks under pressure, and what engineering leaders can do about it.
 
-> **[FIGURE 1: "The Pressure Map"]**
-> *Isometric or layered diagram showing a software delivery pipeline (code → build → review → test → VCS → release → production) with pressure arrows hitting every layer simultaneously. Each layer shows visible strain — cracks, heat, overload indicators. AI is not changing one layer; it is pressuring all layers at once.*
-> *Style: Architectural, dark background with orange/red stress indicators.*
+
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/2baa5e0a-7639-4d0c-89c5-2f519cfa0ac9" />
+**[FIGURE 1: "The Pressure Map"]**
 
 ---
 
