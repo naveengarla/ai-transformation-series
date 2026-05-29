@@ -389,8 +389,115 @@ Seven prompts were given to the user for deep research on each post topic. The u
 
 Full list scraped from: https://trendshift.io/github-trending-repositories?trending-range=30&trending-limit=100
 
+**Note:** Initial scrape got repo names correct but star counts were wrong (DOM bleeding). User provided accurate full data below.
+
+**Accurate Top-100 with stars, descriptions, tags (30-day trending frequency):**
+
+| Rank | Repo | Stars | Forks | Trending Days | Description | Tags |
+|---|---|---|---|---|---|---|
+| 1 | colbymchenry/codegraph | 32.7k | 2k | 11 | Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local | #AI coding assistant |
+| 2 | tinyhumansai/openhuman | 29.7k | 2.8k | 10 | Your Personal AI super intelligence. Private, Simple and extremely powerful | #AI agent #AI memory #Digital human |
+| 3 | Lum1104/Understand-Anything | 43.7k | 3.5k | 9 | Turn any code/KB into interactive knowledge graph. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI | #AI coding assistant #AI skills |
+| 4 | anthropics/claude-plugins-official | 28.6k | 3.1k | 6 | Official Anthropic-managed directory of high quality Claude Code Plugins | #Curated list |
+| 5 | Hmbown/CodeWhale | 36.3k | 3.1k | 6 | Coding agent for DeepSeek models that runs in your terminal | #AI agent #AI coding assistant |
+| 6 | TauricResearch/TradingAgents | 80.7k | 15.7k | 5 | Multi-Agents LLM Financial Trading Framework | #AI agent #Fintech |
+| 7 | ruvnet/ruflo | 56.5k | 6.4k | 5 | Leading agent orchestration platform for Claude. Multi-agent swarms, RAG, native Claude Code/Codex integration | #AI agent #AI workflow #Workflow automation |
+| 8 | ruvnet/RuView | 68.2k | 9k | 5 | WiFi signals → real-time spatial intelligence, vital sign monitoring, presence detection | — |
+| 9 | anthropics/financial-services | 28.7k | 4.1k | 5 | (Anthropic financial services repo) | #AI agent #MCP #Fintech |
+| 10 | oven-sh/bun | 93.1k | 4.7k | 4 | JavaScript runtime, bundler, test runner, package manager | #Bundler |
+| 11 | harry0703/MoneyPrinterTurbo | 68.6k | 9.9k | 3 | Generate short videos with one click using AI LLM | #AI video generation |
+| 12 | bytedance/UI-TARS-desktop | 35.7k | 3.6k | 3 | Open-Source Multimodal AI Agent Stack | #AI agent |
+| 13 | warpdotdev/warp | 60.8k | 4.8k | 2 | Agentic development environment, born out of the terminal | #AI agent #AI coding assistant |
+| 14 | obra/superpowers | **212.1k** | 18.8k | **11** | Agentic skills framework & software development methodology that works | #AI agent #AI coding assistant #AI skills |
+| 15 | CloakHQ/CloakBrowser | 22.3k | 1.8k | 8 | Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement | #Headless browser #Web scraping |
+| 16 | rohitg00/agentmemory | 19.6k | 1.6k | 8 | **#1 Persistent memory for AI coding agents** based on real-world benchmarks | #AI agent #AI coding assistant #AI memory #MCP |
+| 17 | rohitg00/ai-engineering-from-scratch | 24.3k | 3.9k | 7 | Learn it. Build it. Ship it for others | #AI agent #Programming examples |
+| 18 | affaan-m/ECC | **198.3k** | 30.5k | 6 | Agent harness performance optimization: Skills, instincts, memory, security for Claude Code, Codex, Opencode, Cursor | #AI agent #AI coding assistant #AI skills |
+| 19 | K-Dense-AI/scientific-agent-skills | 26.5k | 2.7k | 6 | Agent Skills for research, science, engineering, analysis, finance and writing | #AI agent #AI skills |
+| 20 | soxoj/maigret | 30.9k | 2.2k | 5 | OSINT: collect dossier on person from 3000+ sites | #Web scraping |
+| 21 | HKUDS/CLI-Anything | 41.3k | 3.9k | 5 | Making ALL Software Agent-Native | #AI agent #Workflow automation |
+| 22 | addyosmani/agent-skills | 46.9k | 5.2k | 5 | Production-grade engineering skills for AI coding agents | #AI agent #AI coding assistant #AI skills |
+| 23 | anthropics/knowledge-work-plugins | 17.9k | 2.1k | 4 | Plugins for knowledge workers in Claude Cowork | #AI agent #AI workflow |
+| 24 | Imbad0202/academic-research-skills | 23.7k | 2k | 4 | Academic Research Skills: research → write → review → revise → finalize | #AI agent #AI workflow #Workflow automation |
+| 25 | microsoft/markitdown | 128.4k | 8.8k | 2 | Python tool for converting files and office docs to Markdown | #Document processing |
+| 26 | mattpocock/skills | **111k** | 9.8k | 8 | Skills for Real Engineers. Straight from my .claude directory | #AI skills |
+| 27 | multica-ai/andrej-karpathy-skills | **161.4k** | 16.5k | 7 | A single CLAUDE.md file to improve Claude Code behavior, derived from Karpathy's LLM coding pitfall observations | — |
+| 28 | browserbase/skills | 3.5k | 236 | 7 | Browserbase's official agent skills to access the web | #AI agent |
+| 29 | hardikpandya/stop-slop | 6.6k | 477 | 6 | A skill file for removing AI tells from prose | #AI skills |
+| 30 | PriorLabs/TabPFN | 7.2k | 710 | 5 | Foundation Model for Tabular Data | — |
+| 31 | Leonxlnx/taste-skill | 27.2k | 1.9k | 5 | Gives your AI good taste. Stops AI from generating boring generic slop | #AI agent #AI skills |
+| 32 | virattt/dexter | 26.7k | 3.3k | 3 | Autonomous agent for deep financial research | #AI agent #Fintech |
+| 33 | yikart/AiToEarn | 17.1k | 2.7k | 3 | Let's use AI to Earn! | #AI agent #Workflow automation |
+| 34 | EveryInc/compound-engineering-plugin | 17.9k | 1.4k | 2 | Official Compound Engineering plugin for Claude Code, Codex, Cursor | #AI agent #AI coding assistant |
+| 35 | z-lab/dflash | 4.8k | 342 | 2 | Block Diffusion for Flash Speculative Decoding | #AI infrastructure |
+| 36 | calcom/cal.diy | 44.8k | 13.7k | 1 | Scheduling infrastructure for absolutely everyone | #Workflow automation #Self-hosted |
+| 37 | datawhalechina/hello-agents | 54.6k | 6.7k | 5 | 《从零开始构建智能体》 — Agent tutorial from scratch | #AI agent #Programming examples |
+| 38 | supertone-inc/supertonic | 11k | 1.1k | 5 | Lightning-Fast On-Device Multilingual TTS via ONNX | #Text to speech |
+| 39 | 1jehuang/jcode | 6.7k | 762 | 5 | Coding Agent Harness | #AI agent #AI coding assistant |
+| 40 | docusealco/docuseal | 17k | 1.6k | 4 | Open source DocuSign alternative | #Document processing #Self-hosted |
+| 41 | twentyhq/twenty | 48.2k | 6.8k | 4 | Open alternative to Salesforce, designed for AI | — |
+| 42 | dotnet/skills | 3.2k | 236 | 4 | Skills to assist AI coding agents with .NET and C# | #AI agent #AI coding assistant #AI skills |
+| 43 | playcanvas/supersplat | 8.8k | 951 | 3 | 3D Gaussian Splat Editor | — |
+| 44 | apernet/hysteria | 21.7k | 2.2k | 2 | Lightning fast censorship resistant proxy | #Proxy |
+| 45 | InsForge/InsForge | 10.8k | 935 | 2 | All-in-one open-source backend for agentic coding: DB, auth, storage, compute, hosting, AI gateway | #AI agent #AI coding assistant |
+| 46 | Anil-matcha/Open-Generative-AI | 17.4k | 2.9k | 2 | Free AI image & video generation studio, 200+ models. Self-hosted, MIT licensed | #AI image generation #AI video generation #Self-hosted |
+| 47 | decolua/9router | 15.1k | 2.3k | 5 | Unlimited FREE AI coding. Connect to 40+ providers. Auto-fallback, **RTK -40% tokens**, never hit limits | #AI coding assistant #AI infrastructure |
+| 48 | mukul975/Anthropic-Cybersecurity-Skills | 11.8k | 1.3k | 5 | 754 cybersecurity skills for AI agents. MITRE ATT&CK, NIST CSF 2.0, ATLAS, D3FEND, NIST AI RMF. 26 domains | #AI agent #AI skills |
+| 49 | LearningCircuit/local-deep-research | 8.2k | 724 | 4 | ~95% SimpleQA. Supports local+cloud LLMs. 10+ search engines. Everything Local & Encrypted | #Local LLM #RAG #Self-hosted |
+| 50 | ChromeDevTools/chrome-devtools-mcp | 42.3k | 2.7k | 4 | Chrome DevTools for coding agents | #AI agent #AI coding assistant #MCP |
+| 51 | influxdata/telegraf | 17.6k | 5.8k | 3 | Metrics/logs collection agent | #Monitoring |
+| 52 | Flowseal/zapret-discord-youtube | 28.6k | 2.2k | 3 | (Censorship bypass proxy) | #Proxy |
+| 53 | HKUDS/AI-Trader | 19k | 2.9k | 3 | 100% Fully-Automated Agent-Native Trading | #AI agent #Fintech |
+| 54 | Fincept-Corporation/FinceptTerminal | 24.5k | 3.4k | 3 | Finance terminal: market analytics, investment research, economic data | #Fintech |
+| 55 | bwya77/vscode-dark-islands | 8.6k | 267 | 3 | VSCode theme | — |
+| 56 | datawhalechina/easy-vibe | 15.2k | 1.5k | 3 | vibe coding 2026 — step by step coding course for beginners | #AI coding assistant |
+| 57 | AIDC-AI/Pixelle-Video | 20.5k | 2.9k | 2 | AI Fully Automated Short Video Engine | #AI video generation #Text to speech |
+| 58 | anthropics/claude-code | **127.8k** | 20.8k | 1 | Claude Code — agentic coding tool in terminal | #AI agent #AI coding assistant |
+| 59 | craft-ai-agents/craft-agents-oss | 6.2k | 840 | 1 | (Craft AI agents open source) | #AI agent |
+| 60 | shiyu-coder/Kronos | 27.2k | 4.7k | 5 | Foundation Model for Language of Financial Markets | #Fintech |
+| 61 | DigitalPlatDev/FreeDomain | 171.4k | 3.3k | 4 | DigitalPlat FreeDomain: Free Domain For Everyone | — |
+| 62 | millionco/react-doctor | 11.5k | 371 | 3 | Your agent writes bad React. This catches it | #AI coding assistant |
+| 63 | ggml-org/llama.cpp | 113.9k | 18.2k | 2 | LLM inference in C/C++ | #Local LLM #Self-hosted |
+| 64 | BigBodyCobain/Shadowbroker | 8.9k | 1.4k | 2 | OSINT: track jets, spy satellites, seismic events in one interface | #Data visualization #Self-hosted #Monitoring |
+| 65 | qbittorrent/qBittorrent | 37.8k | 4.7k | 1 | qBittorrent client | — |
+| 66 | public-apis/public-apis | 438.3k | 48k | 1 | Collective list of free APIs | #Curated list |
+| 67 | LadybirdBrowser/ladybird | 63.7k | 3.1k | 1 | Truly independent web browser | — |
+| 68 | anonfaded/FadCam | 2.5k | 190 | 1 | Open-source Android multimedia recorder | — |
+| 69 | rowboatlabs/rowboat | 14.7k | 1.5k | 1 | Open-source AI coworker, with memory | #AI agent #AI memory #Local LLM |
+| 70 | earendil-works/pi | 57.3k | 6.9k | 1 | AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI, Slack bot, vLLM pods | #AI agent #AI coding assistant |
+| 71 | jundot/omlx | 15.5k | 1.3k | 1 | LLM inference with continuous batching & SSD caching for Apple Silicon — macOS menu bar | #AI infrastructure #Local LLM #Self-hosted |
+| 72 | mksglu/context-mode | 16k | 1.2k | 1 | Context window optimization for AI coding agents. **98% reduction**. 15 platforms | #MCP |
+| 73 | byoungd/English-level-up-tips | 49k | 5k | 3 | English learning guide | #Curated list |
+| 74 | czlonkowski/n8n-mcp | 21.4k | 3.5k | 3 | MCP for Claude Desktop/Code/Windsurf/Cursor to build n8n workflows | #AI workflow #MCP #Workflow automation |
+| 75 | can1357/oh-my-pi | 8.4k | 688 | 3 | AI Coding agent for terminal: hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents | #AI agent #AI coding assistant |
+| 76 | cocoindex-io/cocoindex | 10.1k | 801 | 2 | Incremental engine for long horizon agents | #AI infrastructure |
+| 77 | anthropics/skills | 143.4k | 17k | 2 | Public repository for Agent Skills | #AI agent #AI skills |
+| 78 | Alishahryar1/free-claude-code | 30.9k | 4.7k | 2 | Use claude-code for free in terminal/VSCode/Discord like OpenClaw (voice supported) | #AI coding assistant #Local LLM #Proxy |
+| 79 | tech-leads-club/agent-skills | 4.5k | 393 | 2 | Secure, validated skill registry for professional AI coding agents. Extends Antigravity, Claude Code, Cursor, Copilot | #AI agent #AI coding assistant #AI skills |
+| 80 | manaflow-ai/cmux | 20.3k | 1.5k | 2 | Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents | #AI agent #AI coding assistant |
+| 81 | rmyndharis/OpenWA | 6.9k | 1.4k | 2 | Free Open Source Self-Hosted WhatsApp API Gateway | #Self-hosted |
+| 82 | roboflow/supervision | 39.8k | 3.6k | 1 | Reusable computer vision tools | #Computer vision |
+| 83 | ShareX/ShareX | 37.9k | 3.8k | 1 | Screen capture & recording | — |
+| 84 | simstudioai/sim | 28.7k | 3.6k | 1 | Build, deploy, orchestrate AI agents — central intelligence layer for AI workforce | #AI agent #AI workflow #Self-hosted |
+| 85 | VectifyAI/PageIndex | 32.4k | 2.8k | 1 | Document Index for Vectorless, Reasoning-based RAG | #RAG #Document processing |
+| 86 | p-e-w/heretic | 22.4k | 2.3k | 1 | Fully automatic censorship removal for language models | #NLP |
+| 87 | cursor/plugins | 1.1k | 101 | 1 | Cursor plugin specification and official plugins | #AI agent |
+| 88 | awslabs/aidlc-workflows | 2.5k | 413 | 1 | AI-Driven Life Cycle adaptive workflow steering rules for AI coding agents | #AI agent #AI workflow #AI coding assistant |
+| 89 | msitarzewski/agency-agents | 106.1k | 17.5k | 6 | Complete AI agency: frontend wizards to Reddit ninjas, whimsy injectors. Each agent has personality, processes, deliverables | #AI agent |
+| 90 | jwasham/coding-interview-university | 348k | 83k | 3 | Complete CS study plan to become software engineer | #Programming examples #Curated list |
+| 91 | rasbt/LLMs-from-scratch | 96.3k | 14.7k | 3 | Implement ChatGPT-like LLM in PyTorch from scratch | #NLP #Programming examples |
+| 92 | odoo/odoo | 51.8k | 32.6k | 2 | Open Source Apps To Grow Your Business | — |
+| 93 | danielmiessler/Personal_AI_Infrastructure | 14.5k | 2.1k | 1 | Agentic AI Infrastructure for magnifying HUMAN capabilities | #AI agent #AI infrastructure |
+| 94 | rtk-ai/rtk | 56.2k | 3.4k | 1 | CLI proxy that **reduces LLM token consumption by 60-90%** on common dev commands. Single Rust binary, zero deps | #AI infrastructure #Proxy |
+| 95 | masterking32/MasterDnsVPN | 4.4k | 448 | 1 | Advanced DNS tunneling VPN for censorship bypass | #Proxy |
+| 96 | run-llama/liteparse | 6.6k | 419 | 1 | Fast, helpful, open-source document parser | #Document processing |
+| 97 | vercel-labs/open-agents | 5.6k | 725 | 1 | Open source template for building cloud agents | #AI agent #AI workflow |
+| 98 | NirDiamant/agents-towards-production | 20.6k | 2.7k | 1 | End-to-end code-first tutorials for production-grade GenAI agents | #AI agent #Programming examples |
+| 99 | multica-ai/multica | 34.2k | 4.1k | 3 | Open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills | #AI agent #Self-hosted |
+| 100 | jellyfin/jellyfin | 52.7k | 4.9k | 2 | Free Software Media System | #Self-hosted |
+
 **Raw repo list (ranked 1–100):**
-1. NVlabs/Eagle
+1. NVlabs/Eagle ← NOTE: this was a DOM bleed artefact from initial scrape; actual #1 is colbymchenry/codegraph
 2. colbymchenry/codegraph ← `#AI coding assistant`
 3. tinyhumansai/openhuman ← `#AI agent #AI memory #Digital human`
 4. Lum1104/Understand-Anything ← `#AI coding assistant #AI skills`
@@ -491,9 +598,20 @@ Full list scraped from: https://trendshift.io/github-trending-repositories?trend
 99. NirDiamant/agents-towards-production
 100. multica-ai/multica
 
-**Key pattern analysis (30-day window):**
+**Key pattern analysis (30-day window) — UPDATED with accurate data:**
 
-**1. Skills repos are the breakout category** — 11 of 100 repos are `/skills` or agent config files:
+**DAILY TRENDING TOPIC STARS (sidebar data):**
+1. #AI agent — 23k stars/day
+2. #AI coding assistant — 10.7k
+3. #AI skills — 10.2k ← 3rd place in DAILY velocity
+4. #Curated list — 5k
+5. #Self-hosted — 4.6k
+6. #AI workflow — 3.7k
+7. #AI video generation — 3.6k
+8. #MCP — 2.5k
+9. #AI infrastructure — 1.9k
+
+**1. Skills repos are the breakout category** — 11+ of 100 repos are `/skills` or agent config files:
 mattpocock/skills, multica-ai/andrej-karpathy-skills, browserbase/skills, addyosmani/agent-skills, K-Dense-AI/scientific-agent-skills, academic-research-skills, Leonxlnx/taste-skill, dotnet/skills, anthropics/skills, tech-leads-club/agent-skills, mukul975/Anthropic-Cybersecurity-Skills
 → Validates Post 3 thesis: structured intent files are a new open-source asset class
 
@@ -516,14 +634,58 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 **7. AWS appearing** — awslabs/aidlc-workflows (#89)
 → Hyperscalers now releasing agent workflow tools as open source
 
-**8. New interesting repos to investigate:**
-- Lum1104/Understand-Anything (#4) — "graphs that teach > graphs that impress"
-- obra/superpowers (#15)
-- LearningCircuit/local-deep-research (#50) — local-first deep research
-- cocoindex-io/cocoindex (#77) — ETL/stream processing for AI
-- NirDiamant/agents-towards-production (#99)
-- vercel-labs/open-agents (#98)
-- simstudioai/sim (#85)
+**3. Token/cost optimization is an URGENT developer problem** — multiple repos explicitly solving it:
+- colbymchenry/codegraph (#1): "fewer tokens, fewer tool calls, 100% local"
+- decolua/9router (#47): "RTK -40% tokens, never hit limits"
+- rtk-ai/rtk (#94): "reduces LLM token consumption by **60-90%**" — single Rust binary
+- mksglu/context-mode (#72): "**98% reduction** in tool output, 15 platforms" — MCP-based
+→ This validates the architecture thesis: token economics is now a first-class constraint
+
+**4. Agent harness optimization is its own category:**
+- affaan-m/ECC (#18, 198.3k stars!): "The agent harness performance optimization system. Skills, instincts, memory, security"
+- obra/superpowers (#14, 212.1k stars!): "Agentic skills framework & software development methodology that works"
+→ The two highest-starred repos by absolute count are about IMPROVING how agents run — not new agent features
+
+**5. Fintech is the dominant enterprise vertical** — 6 repos in top 100:
+- TauricResearch/TradingAgents (#6, 80.7k): Multi-agent financial trading
+- anthropics/financial-services (#9, 28.7k): Anthropic's finance vertical
+- virattt/dexter (#32): Autonomous financial research agent
+- HKUDS/AI-Trader (#53): "100% Fully-Automated Agent-Native Trading"
+- Fincept-Corporation/FinceptTerminal (#54): Finance analytics terminal
+- shiyu-coder/Kronos (#60): Foundation Model for Financial Markets
+→ Finance is where agents are already deployed in production at scale
+
+**6. "Free AI coding" is a movement** — cost resistance is real:
+- decolua/9router (#47): "Unlimited FREE AI coding. 40+ providers"
+- Alishahryar1/free-claude-code (#78, 30.9k): "Use claude-code for free like OpenClaw"
+→ Token costs are creating demand for workarounds; pricing model disruption is real
+
+**7. Anthropic owns a remarkable cluster** — 6 repos in top 100:
+- anthropics/claude-plugins-official (#4, 28.6k)
+- anthropics/financial-services (#9, 28.7k)
+- anthropics/knowledge-work-plugins (#23, 17.9k)
+- anthropics/claude-code (#58, 127.8k)
+- anthropics/skills (#77, 143.4k)
+→ Anthropic is building a platform ecosystem, not just a model
+
+**8. MCP has a visible ecosystem** — 5 repos explicitly tagged #MCP:
+- rohitg00/agentmemory (#16): MCP-connected memory
+- anthropics/financial-services (#9): Finance via MCP
+- ChromeDevTools/chrome-devtools-mcp (#50, 42.3k): Chrome DevTools for agents
+- mksglu/context-mode (#72): Context optimization via MCP
+- czlonkowski/n8n-mcp (#74, 21.4k): n8n workflow builder via MCP
+→ MCP is becoming the integration layer for real tools (Chrome, n8n, memory) not just toy examples
+
+**9. Cybersecurity skills are a domain:**
+- mukul975/Anthropic-Cybersecurity-Skills (#48, 11.8k): 754 skills mapped to MITRE ATT&CK, NIST CSF 2.0, ATLAS, D3FEND, NIST AI RMF
+
+**10. New interesting repos to investigate:**
+- InsForge/InsForge (#45): "all-in-one open-source backend for agentic coding — DB, auth, storage, compute, hosting, AI gateway"
+- cocoindex-io/cocoindex (#76): "Incremental engine for long horizon agents"
+- msitarzewski/agency-agents (#89, 106.1k): "Complete AI agency — each agent has personality, processes, deliverables"
+- multica-ai/multica (#99): "Open-source managed agents platform — turn coding agents into real teammates"
+- millionco/react-doctor (#62): "Your agent writes bad React. This catches it" ← verification tooling
+- LearningCircuit/local-deep-research (#49): "~95% on SimpleQA, fully local, encrypted"
 
 ### Trendshift.io — 360-Day AI Trending Analysis (Researched 2026-05-29)
 
