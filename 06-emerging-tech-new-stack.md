@@ -175,6 +175,22 @@ The frontier is shifting from flat document retrieval to multi-modal knowledge: 
 
 ## Layer 7: Application, Governance, and the Agent Development Lifecycle
 
+### What Production Actually Looks Like: A Case Study
+
+Before mapping the lifecycle, it helps to anchor in a real case. ClickHouse CTO Alexey Milovidov published a candid account in May 2026 of what a year of AI coding agents looked like on one of the most demanding codebases in open source — a large C++ analytics database running 20–80 million CI tests across 600 commits and 300 pull requests per day.
+
+He frames agent maturity in three levels that have become a useful industry reference:
+
+- **Level 1 — Copy-paste from chat.** Still useful for exploration. Compared to agents, obsolete.
+- **Level 2 — Agents in your CLI or IDE.** Agent reads the codebase, runs commands, edits files, builds, tests, commits. Hand-hold for hard tasks, let run for routine ones. This is where most day-to-day work happens.
+- **Level 3 — Autonomous agents in isolated environments.** Multi-agent feedback loops, spec-driven development, orchestrated multi-agent setups. Still maturing. *"Results from long autonomous loops can be dubious."*
+
+The inflection point for ClickHouse was Claude Opus 4.5 in November 2025. Before that, agents were not usable on a large C++ codebase. After: *"2025 was the year of the tools. 2026 should be the year of productivity gains."*
+
+The numbers are concrete. ClickHouse CI had accumulated roughly 200 failing test findings per day — an impossible backlog that the team could not keep up with. In January and February 2026, Milovidov submitted approximately **700 pull requests** fixing tests and CI infrastructure with agent assistance. Result: **roughly 200 findings per day dropped to 3–5 per 10 million test runs.** Two autonomous agents now open PRs continuously. His verdict: *"This single use case justifies the entire investment."*
+
+His most important recommendation for practitioners: *"The headroom in agent-assisted work is in your CI, not in the prompt."* And the honest warning: agents are a multiplier — strong engineers get sharper, weaker engineers cause more damage.
+
 ### The Agent Development Lifecycle
 
 Building agents is not building software. The agent development lifecycle — build, test, deploy, monitor — is parallel to but distinct from the traditional SDLC because agents are non-deterministic and sensitive to context changes.
@@ -371,7 +387,8 @@ The pattern: MCP is no longer being used to connect AI to demo APIs. It is conne
 
 **Open-Source Community Signals**
 26. Trendshift (2026). [Top-100 GitHub Trending Repositories — 30-Day Window](https://trendshift.io/github-trending-repositories?trending-range=30&trending-limit=100). Scraped 2026-05-29.
-27. Taft, D. K. (2026). ["There is no accountability: AI coding agents are installing packages no one owns."](https://thenewstack.io/aikido-ai-agents-security/) The New Stack, May 27, 2026. Interview with Willem Delbare, CEO, Aikido Security. Key data: ~100K malicious packages/day; Snyk audit of ~4,000 skills found >⅓ had security flaws; CI/CD pipeline hijack escalation.
+27. Milovidov, A. (2026). ["What ClickHouse Learned from a Year of Coding with AI Agents."](https://thenewstack.io/clickhouse-ai-coding-agents/) The New Stack, May 24, 2026. Inflection point: Claude Opus 4.5, Nov 2025. Key metric: 700 PRs → CI findings 200/day → 3–5 per 10M test runs.
+28. Taft, D. K. (2026). ["There is no accountability: AI coding agents are installing packages no one owns."](https://thenewstack.io/aikido-ai-agents-security/) The New Stack, May 27, 2026. Interview with Willem Delbare, CEO, Aikido Security. Key data: ~100K malicious packages/day; Snyk audit of ~4,000 skills found >⅓ had security flaws; CI/CD pipeline hijack escalation.
 28. OWASP (2025). [Top 10 for Agentic Applications 2025–2026.](https://owasp.org/www-project-top-10-for-large-language-model-applications/) First formal taxonomy of agent-specific security risks.
 27. OSSInsight (2026). [Trending AI Repositories — Real-Time Rankings.](https://ossinsight.io/trending/ai) Powered by 10.5B+ GitHub events.
 28. GitHub Octoverse 2025. 4.3M AI-related repositories; 178% YoY jump in LLM-focused projects.

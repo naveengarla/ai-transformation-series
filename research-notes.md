@@ -807,6 +807,53 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 
 ---
 
+## ClickHouse: A Year of AI Coding Agents in Production (May 2026)
+
+**Source:** ["What ClickHouse Learned from a Year of Coding with AI Agents"](https://thenewstack.io/clickhouse-ai-coding-agents/)
+The New Stack, May 24, 2026. By Alexey Milovidov, CTO, ClickHouse.
+Context: ClickHouse is a major open-source analytics database with a very large C++ codebase (~600 commits/day, 300 PRs/day, 20-80M CI tests/day).
+
+### The Three Levels of AI-Assisted Coding (Taxonomy)
+1. **Level 1: Copy-paste from chat** — Still useful for exploration; compared to agents, obsolete.
+2. **Level 2: Agents in your CLI or IDE** — Agent reads codebase, runs commands, edits files, builds, tests, commits. Hand-hold for hard tasks, let run for routine ones. This is most day-to-day work.
+3. **Level 3: Autonomous agents in isolated environments** — Multi-agent feedback loops, spec-driven development, orchestrated multi-agent setups. A few examples in production but tooling still maturing. "Results from long autonomous loops can be dubious."
+
+### The Inflection Point
+- **Before Claude Opus 4.5 (pre-Nov 2025):** Agents were toys on large C++ codebases. Half the ClickHouse team had never seriously used an agent at their October 2025 offsite.
+- **Claude Opus 4.5 (November 2025):** Milovidov began giving it small over-specified C++ tasks → bug investigation from CI logs → small features. It exceeded expectations every time.
+- **Quote:** "Since Opus 4.5, agents have been usable for daily work on a large C++ codebase. 2025 was the year of the tools. 2026 should be the year of productivity gains."
+
+### Hard Metrics (Real Production Data)
+- **Flaky test fixing:** CI runs 20-80M tests across ~600 commits/300 PRs/day. Before: ~200 findings/day, impossible to keep up. After 2 months with agents (Jan-Feb 2026): Milovidov submitted ~**700 PRs** fixing tests and CI infrastructure. Result: **~200 findings/day → 3-5 per 10M test runs**. Two autonomous agents now open PRs and find edge cases continuously.
+- **Merge conflicts:** Agents resolve nearly 100% better than humans. "Reviewing code somebody else wrote is much harder than reviewing code you just wrote."
+- **Bug investigation:** One hard concurrency bug that defeated 3 human attempts was fixed by Opus 4.6 in a one-line change, after ~1 hour of reasoning, with full explanation and tests.
+
+### What Works vs What Doesn't
+**Works well:**
+- Boilerplate and integrations (repetitive build-system changes, config edits across many files)
+- Merge conflict resolution (near 100% win rate)
+- Code review (custom bot on top of Copilot CLI; human reviewers now focus on architecture, bot catches resource leaks, race conditions, corner cases)
+- Fixing flaky tests — single best use case justifying the entire investment
+- Bug investigation (with experienced engineer guiding; dangerous with junior engineers)
+
+**Dangerous:**
+- Bug investigation with inexperienced engineers — agents produce plausible-but-wrong hypotheses that less experienced engineers follow confidently
+
+### Seven Practical Recommendations
+1. **Treat AI as a tool of thought, not a replacement for thinking.** Extension of your editor, not your engineering judgment.
+2. **It is a multiplier.** Strong engineers get sharper. Weaker engineers cause more damage. No shortcut around understanding the problem.
+3. **Start small, raise expectations gradually.** Skeptics who jump to large complex tasks reconfirm their skepticism.
+4. **Always validate.** More tests, more fuzzing, more randomization. **"The headroom in agent-assisted work is in your CI, not in the prompt."**
+5. **Use the latest models, keep at least two providers handy.** Model providers experience downtime, sometimes daily. Switch between Claude Code, Codex CLI, and others.
+6. **Save guidance to CLAUDE.md/AGENTS.md, but keep it short.** Long instruction files get ignored. Avoid telling the model what NOT to do — that often has the opposite effect.
+7. **Be specific.** Which files, which functions, which approach. Preserves your engineering skill in the process.
+
+### Distribution to Articles
+- **Post 1 (Tipping Point):** Amplifier quote — "Strong engineers get sharper with agents. Weaker engineers cause more damage." Hard validation of the DORA amplifier finding.
+- **Post 3 (Developer Identity):** Three-level taxonomy, CLAUDE.md guidance, "tool of thought not replacement for thinking."
+- **Post 4 (Testing):** The CI story is extraordinary — 200 findings/day → 3-5 per 10M runs with 700 PRs. Real verification bottleneck data.
+- **Post 6 (Emerging Tech):** Full case study — inflection point, three levels, what works/doesn't, 700 PRs metric.
+
 ## Security — AI Agent Supply Chain Attack Surface (Researched 2026-05-29)
 
 **Source:** ["There is no accountability": AI coding agents are installing packages no one owns](https://thenewstack.io/aikido-ai-agents-security/)
