@@ -2,6 +2,11 @@
 
 *Part 7 of a series on how AI is transforming software engineering — and what it means for architects, developers, testers, and leaders.*
 
+> *"Every component of a harness exists because the model can't do it alone — and the best harnesses are designed knowing those components will become unnecessary as models improve."*
+> — Awesome Harness Engineering [ref]
+
+This single sentence captures the arc of the entire decade. We are building scaffolding. The scaffolding will shrink. What remains will be the work only humans can do.
+
 ---
 
 Over the course of this series, I have examined the systemic tipping point, the architect's shift to system ecology, the developer's identity crisis, the reinvention of testing, the leader's responsibility for foundations, and the emerging technology stack. Each post described a transformation already underway.

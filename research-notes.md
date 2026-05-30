@@ -807,6 +807,55 @@ anthropics/claude-plugins-official (#5), anthropics/financial-services (#10), an
 
 ---
 
+## Awesome Harness Engineering — github.com/ai-boost/awesome-harness-engineering (Scraped 2026-05-30)
+
+**Source:** https://github.com/ai-boost/awesome-harness-engineering
+Curated list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, orchestration.
+
+### Definition
+> "Harness engineering is the discipline of designing the scaffolding — context delivery, tool interfaces, planning artifacts, verification loops, memory systems, and sandboxes — that surrounds an AI agent and determines whether it succeeds or fails on real tasks. Every component here exists because the model can't do it alone — and the best harnesses are designed knowing those components will become unnecessary as models improve."
+
+### Canonical Quotes
+- **GitHub Copilot team:** "The model is the engine, the harness is the car."
+- **Martin Fowler's "humans on the loop"** — harness engineers who design and maintain agent environments, not inspect individual outputs
+- **Thoughtworks / Kulkarni:** "The better the models are, the thinner the harness needs to be."
+
+### Five Harness Primitives (LangChain)
+Filesystem (durable state + collaboration surface) · Code execution · Sandbox (isolation + verification) · Memory (cross-session persistence) · Context management (compaction against "context rot")
+**Co-evolution warning:** Models trained with specific harnesses can become overfitted to those designs.
+
+### Hard Data Points
+
+| Finding | Data | Source |
+|---|---|---|
+| Harness-only rank improvement (no model swap) | **Rank 30 → Top 5**, Terminal Bench 2.0 | LangChain |
+| State machine constraints on local models | **2/10 → 10/10** SWE-bench subset | statewright |
+| Azure SRE Agent incident resolution | **40.5 hours → 3 minutes** (35K+ incidents) | Microsoft |
+| Azure SRE "Intent Met" score, 100+ tools → filesystem | **45% → 75%** on novel incidents | Microsoft |
+| Harness setup benchmark swing | **±5+ percentage points** | Anthropic 2026 Trends |
+| Negative examples in SKILL.md routing | **73% → 85%** routing accuracy | OpenAI |
+| AutoHarness (learned constraints) vs frontier | Gemini-2.5-Flash + AutoHarness **> GPT-5.2-High** | Google DeepMind |
+| AdaptOrch topology selection vs model selection | **+12–23% performance** | Feb 2026 paper |
+| Claude Code compaction: token reduction | **84%** in 100-turn eval | Anthropic |
+| context-mode MCP (tool output interception) | **77% token reduction, 76% wall time reduction** | context-mode |
+| Confucius Code Agent (CCA) SWE-Bench-Pro | **59% Resolve@1** (beats commercial baselines) | Meta/Harvard |
+
+### Anthropic Claude Code Postmortem
+Three harness-level changes caused visible quality regressions:
+1. Default reasoning-effort downgrade
+2. Caching bug that dropped thinking history from stale sessions
+3. Overly aggressive verbosity-limiting system prompt
+→ Minor harness adjustments (prompt wording, cache headers, default parameters) compound into visible regressions
+
+### Distribution to Articles
+- **Post 2 (Architect):** Harness IS the architecture. Azure SRE case study, five primitives, Martin Fowler "humans on the loop", co-evolution warning, rank 30→top 5 harness-only
+- **Post 3 (Developer):** Level 2→3 = harness engineering as developer skill. "Engine/car" quote. 5pt benchmark swing
+- **Post 4 (Testing):** statewright (2/10→10/10), LLM Readiness Harness CI gates, verification loop patterns
+- **Post 6 (Emerging Tech):** Add "Harness Engineering" as named section. Full definition, primitives, data table, Azure SRE
+- **Post 7 (2030 Vision):** "Components will become unnecessary as models improve" — the trajectory
+
+---
+
 ## Cursor Developer Habits Report — Spring 2026 (Scraped 2026-05-29)
 
 **Source:** https://cursor.com/insights — "The Cursor Developer Habits Report, Spring 2026"

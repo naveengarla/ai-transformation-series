@@ -1,0 +1,36 @@
+- generic [active] [ref=e1]:
+  - insertion [ref=e3204]:
+    - iframe [ref=e3206]:
+      - generic [active] [ref=f3e1]:
+        - generic [ref=f3e6]
+        - img [ref=f3e42] [cursor=pointer]
+        - button [ref=f3e44] [cursor=pointer]
+        - iframe
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Trendshift" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Trendshift" [ref=e7]
+      - search [ref=e8]:
+        - generic [ref=e9]
+  - main [ref=e11]:
+    - generic [ref=e50]:
+      - complementary [ref=e3207]:
+        - generic [ref=e3208]
+      - generic [ref=e52]:
+        - generic [ref=e53]
+        - generic [ref=e72]
+      - complementary [ref=e3249]:
+        - generic [ref=e3250]
+  - insertion [ref=e3445]
+  - contentinfo "Footer" [ref=e3161]:
+    - heading "Footer" [level=2] [ref=e3162]
+    - generic [ref=e3163]:
+      - generic [ref=e3164]:
+        - generic [ref=e3165]
+        - generic [ref=e3169]
+      - generic [ref=e3198]:
+        - img "Trendshift owl" [ref=e3199]
+        - generic [ref=e3200]
+  - region "Notifications alt+T"
+  - alert [ref=e3447]

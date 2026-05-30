@@ -1,0 +1,1405 @@
+{
+  "count": 106,
+  "data": [
+    {
+      "rank": 1,
+      "repo": "NVlabs/Eagle",
+      "href": "/repositories/40584",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 2,
+      "repo": "colbymchenry/codegraph",
+      "href": "/repositories/26949",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 3,
+      "repo": "tinyhumansai/openhuman",
+      "href": "/repositories/23680",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 4,
+      "repo": "Lum1104/Understand-Anything",
+      "href": "/repositories/23482",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 5,
+      "repo": "anthropics/claude-plugins-official",
+      "href": "/repositories/19474",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 6,
+      "repo": "Hmbown/CodeWhale",
+      "href": "/repositories/26455",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 7,
+      "repo": "TauricResearch/TradingAgents",
+      "href": "/repositories/16192",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 8,
+      "repo": "ruvnet/ruflo",
+      "href": "/repositories/22017",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 9,
+      "repo": "ruvnet/RuView",
+      "href": "/repositories/22266",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 10,
+      "repo": "anthropics/financial-services",
+      "href": "/repositories/26923",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 11,
+      "repo": "oven-sh/bun",
+      "href": "/repositories/371",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 12,
+      "repo": "harry0703/MoneyPrinterTurbo",
+      "href": "/repositories/8731",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 13,
+      "repo": "bytedance/UI-TARS-desktop",
+      "href": "/repositories/13584",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 14,
+      "repo": "warpdotdev/warp",
+      "href": "/repositories/10751",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 15,
+      "repo": "obra/superpowers",
+      "href": "/repositories/17415",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 16,
+      "repo": "CloakHQ/CloakBrowser",
+      "href": "/repositories/23163",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 17,
+      "repo": "rohitg00/agentmemory",
+      "href": "/repositories/25123",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 18,
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "href": "/repositories/24667",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 19,
+      "repo": "affaan-m/ECC",
+      "href": "/repositories/21488",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 20,
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "href": "/repositories/25649",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 21,
+      "repo": "soxoj/maigret",
+      "href": "/repositories/12333",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 22,
+      "repo": "HKUDS/CLI-Anything",
+      "href": "/repositories/22991",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 23,
+      "repo": "addyosmani/agent-skills",
+      "href": "/repositories/25200",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 24,
+      "repo": "anthropics/knowledge-work-plugins",
+      "href": "/repositories/23105",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 25,
+      "repo": "Imbad0202/academic-research-skills",
+      "href": "/repositories/24187",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 26,
+      "repo": "microsoft/markitdown",
+      "href": "/repositories/12961",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 27,
+      "repo": "mattpocock/skills",
+      "href": "/repositories/21589",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 28,
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "href": "/repositories/21654",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 29,
+      "repo": "browserbase/skills",
+      "href": "/repositories/26496",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 30,
+      "repo": "hardikpandya/stop-slop",
+      "href": "/repositories/23515",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 31,
+      "repo": "PriorLabs/TabPFN",
+      "href": "/repositories/12693",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 32,
+      "repo": "Leonxlnx/taste-skill",
+      "href": "/repositories/21681",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 33,
+      "repo": "virattt/dexter",
+      "href": "/repositories/18531",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 34,
+      "repo": "yikart/AiToEarn",
+      "href": "/repositories/20785",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 35,
+      "repo": "EveryInc/compound-engineering-plugin",
+      "href": "/repositories/17460",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 36,
+      "repo": "z-lab/dflash",
+      "href": "/repositories/25500",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 37,
+      "repo": "calcom/cal.diy",
+      "href": "/repositories/26014",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 38,
+      "repo": "datawhalechina/hello-agents",
+      "href": "/repositories/15520",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 39,
+      "repo": "supertone-inc/supertonic",
+      "href": "/repositories/15657",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 40,
+      "repo": "1jehuang/jcode",
+      "href": "/repositories/25042",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 41,
+      "repo": "docusealco/docuseal",
+      "href": "/repositories/544",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 42,
+      "repo": "twentyhq/twenty",
+      "href": "/repositories/563",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 43,
+      "repo": "dotnet/skills",
+      "href": "/repositories/24972",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 44,
+      "repo": "playcanvas/supersplat",
+      "href": "/repositories/11421",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 45,
+      "repo": "apernet/hysteria",
+      "href": "/repositories/1671",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 46,
+      "repo": "InsForge/InsForge",
+      "href": "/repositories/19834",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 47,
+      "repo": "Anil-matcha/Open-Generative-AI",
+      "href": "/repositories/25761",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 48,
+      "repo": "decolua/9router",
+      "href": "/repositories/22628",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 49,
+      "repo": "mukul975/Anthropic-Cybersecurity-Skills",
+      "href": "/repositories/23422",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 50,
+      "repo": "LearningCircuit/local-deep-research",
+      "href": "/repositories/14116",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 51,
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "href": "/repositories/15541",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 52,
+      "repo": "influxdata/telegraf",
+      "href": "/repositories/2219",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 53,
+      "repo": "Flowseal/zapret-discord-youtube",
+      "href": "/repositories/13012",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 54,
+      "repo": "HKUDS/AI-Trader",
+      "href": "/repositories/15607",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 55,
+      "repo": "Fincept-Corporation/FinceptTerminal",
+      "href": "/repositories/17028",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 56,
+      "repo": "bwya77/vscode-dark-islands",
+      "href": "/repositories/21192",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 57,
+      "repo": "datawhalechina/easy-vibe",
+      "href": "/repositories/22079",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 58,
+      "repo": "AIDC-AI/Pixelle-Video",
+      "href": "/repositories/17394",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 59,
+      "repo": "anthropics/claude-code",
+      "href": "/repositories/13856",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 60,
+      "repo": "craft-ai-agents/craft-agents-oss",
+      "href": "/repositories/20714",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 61,
+      "repo": "shiyu-coder/Kronos",
+      "href": "/repositories/15175",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 62,
+      "repo": "DigitalPlatDev/FreeDomain",
+      "href": "/repositories/15163",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 63,
+      "repo": "millionco/react-doctor",
+      "href": "/repositories/23030",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 64,
+      "repo": "ggml-org/llama.cpp",
+      "href": "/repositories/12971",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 65,
+      "repo": "BigBodyCobain/Shadowbroker",
+      "href": "/repositories/22871",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 66,
+      "repo": "qbittorrent/qBittorrent",
+      "href": "/repositories/650",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 67,
+      "repo": "public-apis/public-apis",
+      "href": "/repositories/1677",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 68,
+      "repo": "LadybirdBrowser/ladybird",
+      "href": "/repositories/11667",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 69,
+      "repo": "anonfaded/FadCam",
+      "href": "/repositories/12830",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 70,
+      "repo": "rowboatlabs/rowboat",
+      "href": "/repositories/13609",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 71,
+      "repo": "earendil-works/pi",
+      "href": "/repositories/15471",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 72,
+      "repo": "jundot/omlx",
+      "href": "/repositories/22928",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 73,
+      "repo": "mksglu/context-mode",
+      "href": "/repositories/24012",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 74,
+      "repo": "byoungd/English-level-up-tips",
+      "href": "/repositories/7097",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 75,
+      "repo": "czlonkowski/n8n-mcp",
+      "href": "/repositories/14838",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 76,
+      "repo": "can1357/oh-my-pi",
+      "href": "/repositories/30057",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 77,
+      "repo": "cocoindex-io/cocoindex",
+      "href": "/repositories/13939",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 78,
+      "repo": "anthropics/skills",
+      "href": "/repositories/15786",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 79,
+      "repo": "Alishahryar1/free-claude-code",
+      "href": "/repositories/22971",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 80,
+      "repo": "tech-leads-club/agent-skills",
+      "href": "/repositories/25070",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 81,
+      "repo": "manaflow-ai/cmux",
+      "href": "/repositories/27053",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 82,
+      "repo": "rmyndharis/OpenWA",
+      "href": "/repositories/30722",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 83,
+      "repo": "roboflow/supervision",
+      "href": "/repositories/124",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 84,
+      "repo": "ShareX/ShareX",
+      "href": "/repositories/642",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 85,
+      "repo": "simstudioai/sim",
+      "href": "/repositories/13848",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 86,
+      "repo": "VectifyAI/PageIndex",
+      "href": "/repositories/14736",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 87,
+      "repo": "p-e-w/heretic",
+      "href": "/repositories/20538",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 88,
+      "repo": "cursor/plugins",
+      "href": "/repositories/26062",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 89,
+      "repo": "awslabs/aidlc-workflows",
+      "href": "/repositories/27067",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 90,
+      "repo": "msitarzewski/agency-agents",
+      "href": "/repositories/22315",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 91,
+      "repo": "jwasham/coding-interview-university",
+      "href": "/repositories/2366",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 92,
+      "repo": "rasbt/LLMs-from-scratch",
+      "href": "/repositories/7329",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 93,
+      "repo": "odoo/odoo",
+      "href": "/repositories/422",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 94,
+      "repo": "danielmiessler/Personal_AI_Infrastructure",
+      "href": "/repositories/15613",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 95,
+      "repo": "rtk-ai/rtk",
+      "href": "/repositories/22339",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 96,
+      "repo": "masterking32/MasterDnsVPN",
+      "href": "/repositories/23688",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 97,
+      "repo": "run-llama/liteparse",
+      "href": "/repositories/23992",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 98,
+      "repo": "vercel-labs/open-agents",
+      "href": "/repositories/25883",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 99,
+      "repo": "NirDiamant/agents-towards-production",
+      "href": "/repositories/25965",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    },
+    {
+      "rank": 100,
+      "repo": "multica-ai/multica",
+      "href": "/repositories/24695",
+      "stars": "32.7k",
+      "description": "Pre-indexed code knowledge graph for Claude Code — fewer tokens, fewer tool calls, 100% local",
+      "tags": [
+        "#AI coding assistant",
+        "#AI agent",
+        "#AI memory",
+        "#Digital human",
+        "#AI coding assistant"
+      ]
+    }
+  ]
+}

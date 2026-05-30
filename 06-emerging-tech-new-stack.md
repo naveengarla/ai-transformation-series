@@ -229,6 +229,30 @@ Most teams are at level 1-2. The competitive advantage lies at levels 3-4.
 
 Cursor's Developer Habits Report provides empirical confirmation of why context engineering has become the dominant discipline. The input-to-output token ratio on real agent sessions rose from **4.5x in January 2026 to 11–13x by May 2026** — models are reading 2.5 times more context for every token they generate than they were five months ago. Input tokens now account for over 91% of input-output volume. And once cache is included, **~90% of all tokens consumed are cache reads** — agents are overwhelmingly reusing prior context rather than processing everything from scratch. Cache-read tokens cost significantly less than input tokens, making aggressive caching the single most important cost lever in agent infrastructure today.
 
+### Harness Engineering: The Discipline That Surrounds the Model
+
+A named discipline has solidified around the infrastructure that makes agents reliable. Harness engineering is the practice of designing the scaffolding — context delivery, tool interfaces, planning artifacts, verification loops, memory systems, and sandboxes — that surrounds an AI agent and determines whether it succeeds or fails on real tasks.
+
+The GitHub Copilot team put it plainly: **"The model is the engine, the harness is the car."** You cannot have a useful vehicle with only an engine.
+
+The data behind this framing is now concrete. LangChain documented moving their coding agent from rank 30 to **top 5 on Terminal Bench 2.0 with no model swap** — purely through harness changes: structured verification loops, context injection with directory maps and time-budget warnings, loop-detection middleware, and a "reasoning sandwich" that concentrates maximum thinking at planning and verification phases. Anthropic's 2026 Agentic Coding Trends Report confirmed the general finding: **harness setup alone can swing benchmarks by 5+ percentage points.**
+
+The statewright framework demonstrated the inverse: local models went from **2/10 to 10/10** on a SWE-bench subset purely by constraining which tools the agent could call in each phase via state machine guardrails. The finding — "loop structure, not model size, is the binding constraint" — is the clearest available evidence that harness investment has higher leverage than model upgrades for many real-world tasks.
+
+The most data-backed production case study is Microsoft's Azure SRE Agent. It has autonomously handled over **35,000 production incidents**, reducing time-to-mitigation from 40.5 hours to 3 minutes. The architectural key: instead of 100+ bespoke specialized tools, the team exposed everything (source code, runbooks, query schemas, past investigation notes) as files and let the agent navigate using read_file, grep, find, and shell. "Intent Met" score on novel incidents rose from **45% to 75%** — filesystem-based context engineering outperformed specialized tooling.
+
+Five primitives compose any agent harness:
+
+1. **Filesystem** — durable state and agent collaboration surface
+2. **Code execution** — autonomous problem-solving without pre-designed solutions
+3. **Sandbox** — isolation and verification
+4. **Memory** — cross-session persistence
+5. **Context management** — compaction against "context rot"
+
+Martin Fowler frames the emerging role as "humans on the loop" — harness engineers who design and maintain agent environments rather than inspecting individual outputs. This is a distinct discipline from prompt engineering and from traditional software architecture.
+
+One warning worth internalizing: models trained with specific harnesses can become overfitted to those designs. Harness architecture choices have lasting consequences beyond the immediate task. Design for adaptability, not just current performance.
+
 ### Agent Memory: From Context Stuffing to Cognitive Architecture
 
 Early agents had a simple memory strategy: stuff everything into the context window. When context windows expanded from 8K to 128K to 1M tokens, teams tried to keep pace. This approach failed. Burying relevant signals beneath hundreds of thousands of tokens of noise produces the "lost in the middle" phenomenon — models fail silently, missing crucial context that is technically present but cognitively inaccessible.

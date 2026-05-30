@@ -125,6 +125,8 @@ The reskilling conversation tends to focus on what to learn. But the de-skilling
 
 **De-skill IDE perfectionism.** Ciera Jaspan reframes this as: de-skill anything that causes friction without building understanding. Configuring your editor to pixel-perfection is time that could be spent understanding your system.
 
+**Reskill for harness engineering.** A named discipline has emerged for the work of designing reliable AI agents: harness engineering. The GitHub Copilot team defined it tersely: "The model is the engine, the harness is the car." Anthropic's 2026 Agentic Coding Trends Report found that harness setup alone can swing benchmarks by 5+ percentage points — more than swapping between models in the same tier. For developers, this means the skill is not just prompting better — it is designing better contexts, verification loops, tool interfaces, and planning artifacts. Level 3 development (autonomous loops) is harness engineering as software craft.
+
 **Reskill for architecture and environment design.** As coding becomes automated, the developer's primary value shifts to designing the environment where generated code operates — data structures, service boundaries, API contracts, security posture.
 
 **Reskill for evaluation.** The shift from writing code to verifying code means testing becomes the most critical phase. Building robust, automated evaluation pipelines to objectively measure agent performance is a mandatory new skill. Without strong evals, steering an AI agent is guesswork.

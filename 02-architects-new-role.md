@@ -105,6 +105,16 @@ An Amdahl's-Law lens is useful here. Once models get faster or cheaper, the seri
 > *Key data callouts: "Multi-agent: ~4x tokens of chat, ~15x for complex runs" (Anthropic), "Bash tool: 245-token overhead, Text editor: 700-token" (Anthropic pricing), "Stateful patterns save 40-50% calls vs stateless subagents" (LangChain).*
 > *Style: Data visualization showing flow and accumulation. The reader should see where tokens pile up and where architectural choices can reduce them.*
 
+## The Harness Is the Architecture
+
+A name has emerged for what architects are actually building when they design AI-native systems: **harness engineering** — the discipline of designing the scaffolding (context delivery, tool interfaces, planning artifacts, verification loops, memory systems, and sandboxes) that surrounds an agent and determines whether it succeeds or fails on real tasks.
+
+Every component of a harness exists because the model cannot do that thing alone. And the best harnesses are designed knowing that each component will eventually become unnecessary as models improve. That design horizon is what distinguishes harness engineering from mere prompt engineering.
+
+The Microsoft Azure SRE Agent provides the most compelling production evidence for this framing. The system has autonomously handled over 35,000 production incidents, reducing time-to-mitigation from 40.5 hours to 3 minutes. The architectural key was not a better model — it was a better harness. The team replaced over 100 bespoke specialized tools with a filesystem-based context engineering approach: source code, runbooks, query schemas, and past investigation notes were all exposed as files, and the agent navigated using read_file, grep, find, and shell. The "Intent Met" score on novel incidents rose from 45% to 75%. Specialized tooling lost to a well-designed context surface.
+
+Martin Fowler characterizes the emerging role as "humans on the loop" — architects and engineers who design and maintain agent environments rather than inspecting individual outputs. This is distinct from prompt engineering and from traditional system design. It is closer to operating system design: you are building the environment in which programs run.
+
 ## What the Role Looks Like in Practice
 
 The emerging architect is becoming a designer of constraints, surfaces, and feedback loops. In practice, that means five things:
