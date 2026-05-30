@@ -1127,6 +1127,62 @@ Marketing, sales, and product teams are now using AI agents without realising pa
 - **Post 9 (if written) or Post 6:** The skills security finding directly intersects with Post 3's thesis about skills files as a new open-source asset — they're also a new attack surface.
 - **Post 5 (Leadership):** "No one has made the decision, and no one owns the risk" — this is a Deming-principle failure at the organizational level. Leaders need explicit AI security ownership.
 
+## Awesome Harness Engineering — Full README Verified URLs & New Data (2026-05-30)
+
+**Source:** `C:\Users\nge2kor\Downloads\awesome-harness.md` — complete file
+
+### Canonical URLs (verified)
+| Resource | URL |
+|---|---|
+| Harness Engineering (OpenAI) | https://openai.com/index/harness-engineering/ |
+| Harness Engineering (Martin Fowler synthesis) | https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html |
+| Harness Engineering for users (Böckeler) | https://martinfowler.com/articles/harness-engineering.html |
+| Anatomy of Agent Harness (LangChain) | https://blog.langchain.com/the-anatomy-of-an-agent-harness/ |
+| Improving Deep Agents — rank 30→top 5 | https://blog.langchain.com/improving-deep-agents-with-harness-engineering/ |
+| statewright (2/10→10/10) | https://github.com/statewright/statewright |
+| "Engine/car" quote — VS Code team | https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode |
+| Azure SRE Agent (40.5h→3min) | https://techcommunity.microsoft.com/blog/appsonazureblog/how-we-build-azure-sre-agent-with-agentic-workflows/4508753 |
+| Context Engineering for Azure SRE (45%→75%) | https://techcommunity.microsoft.com/blog/appsonazureblog/context-engineering-lessons-from-building-azure-sre-agent/4481200/ |
+| Anthropic 2026 Agentic Coding Trends (5pt swing) | https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf |
+| AutoHarness — beats GPT-5.2-High | https://arxiv.org/abs/2603.03329 |
+| Claude Code architecture (5-stage compaction) | https://arxiv.org/abs/2604.14228 |
+| Scaling Managed Agents (p50 -60%, p95 -90%) | https://www.anthropic.com/engineering/managed-agents |
+| AdaptOrch (+12-23% topology over model selection) | https://arxiv.org/abs/2602.16873 |
+| AgentAssay (86% regression detection) | https://arxiv.org/abs/2603.02601 |
+
+### New Key Data Points
+
+**Skills effectiveness:**
+- Claude Code WITH curated skills: **82% task completion vs 9% without** — source: https://blog.langchain.com/evaluating-skills/
+- ≤12 skills outperforms sprawling skill sets; consolidation matters as much as coverage
+- OpenAI: 73%→85% routing accuracy by adding negative examples to SKILL.md — https://developers.openai.com/blog/skills-shell-tips
+
+**Memory failures at scale:**
+- **60% of facts destroyed during compaction**; 54% behavioral drift across cascaded summarizations — arXiv:2603.17781 ("Facts as First Class Objects")
+- In-context memory fails at ~8,000 facts capacity — needs structured retrieval layer
+- TencentDB 4-tier memory: **61% token reduction, 51% pass-rate improvement** on long-horizon coding
+- Active Context Compression: **22.7% token reduction, zero accuracy loss** (agent-controlled)
+- agentmemory: **95.2% retrieval accuracy, 92% token reduction** for coding agents
+
+**Security/Authorization:**
+- Open Agent Passport (pre-action authorization): **0% attack success vs 74.6%** without it — enforces in 53ms — arXiv:2603.20953
+- AgentDoG safety diagnostics: **91.8% accuracy** — arXiv:2601.18491
+- Claude Code Auto Mode insight: users approve **93% of prompts** → approvals meaningless → replaced with 2-stage classifier (deny-and-continue, not halt)
+
+**Production architecture:**
+- Anthropic Managed Agents: brain/hands/session separation; crash recovery via session replay; **p50 TTFT -60%, p95 TTFT -90%**
+- Parallel C compiler: 16 Claude instances claiming tasks via files in `current_tasks/` — zero central orchestrator — https://www.anthropic.com/engineering/building-c-compiler
+- 60% of 70 open-source LLM agent projects use Agent Loop pattern — arXiv:2604.11378
+- Runtime persistence mismatch: **80% missing-variable errors** OR **3.5x token overhead** — arXiv:2603.01209
+
+### Distribution to Articles
+- **Post 2 (Architect):** Verified URLs for Azure SRE, rank 30→top 5, "engine/car" quote source
+- **Post 3 (Developer):** 82% vs 9% task completion with/without skills — use in skills section
+- **Post 4 (Testing):** AgentAssay 86% regression detection (behavioral fingerprinting), 60% fact destruction → memory layer affects test stability
+- **Post 6 (Emerging Tech):** Memory section: add 60% fact destruction, TencentDB 61%/51% stats, agentmemory 95.2%. Security: add Open Agent Passport (0% vs 74.6%)
+
+---
+
 ## Notes
 
 - **Name correction:** Fiona Fung (not "Fiona Fun"). Title: Director of Engineering for Claude Code, Anthropic.
