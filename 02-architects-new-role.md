@@ -4,124 +4,127 @@
 
 ---
 
-In the first post of this series, I argued that software engineering has reached a tipping point — not because AI writes code faster, but because that speedup is pressuring every other layer of the delivery system simultaneously. Build pipelines, code review, testing, version control, release processes — none were designed for the throughput that AI-assisted development is now generating.
+There is a question I now ask every architect I work with: if you replaced your development team with AI agents tomorrow, what would break first? Not in the code — in the system around the code. The build pipelines. The review process. The release governance. The way context flows between tools. Most architects cannot answer it, because they have never had to think about their engineering ecosystem as a designed system. It has always been a collection of practices and tools that accumulated over time.
 
-If that is the systemic problem, then the architect is the person who has to solve it. Not by writing better code — the machines are handling that — but by designing the environment in which code is produced, validated, and sustained.
+That reckoning has arrived.
 
-This is the shift I want to unpack: the architect's centre of gravity is moving from designing systems to designing system ecologies.
+## The Job Has Changed
 
-## What Changed
+For most of software engineering history, the architect's job was to design the structure of the software: the services, the data stores, the interfaces between them. Get the boundaries right, and the system would scale, perform, and evolve. The architect drew boxes and lines. Other people filled in the boxes.
 
-For most of my career, architecture meant making structural decisions about software. Monolith or microservices. Sync or async. SQL or document store. The architect drew boxes and lines, defined service boundaries, and ensured the system could scale, perform, and evolve.
+That job still exists. But it is no longer where the hardest architectural problems live.
 
-Those decisions still matter. But they are no longer where the hardest problems live.
+The hardest problems now are environmental, not structural. They are questions like: How much complexity should live in the agent's active context versus external memory? When does a capability belong in a tool versus a skill versus a subagent? Where is the line between what the model decides and what the system enforces deterministically? How does evaluation fit into the architecture — not as a testing phase, but as a structural feedback loop that operates continuously? How do you design for token cost the same way you design for latency?
 
-The hardest problems now sound like this: When should the agent use a tool versus load a skill versus spawn a subagent? How much complexity belongs in the system prompt versus external memory? Which actions require deterministic enforcement versus model discretion? How do you structure evaluation so that every change arrives with verifiable evidence? How do you manage token budgets across a multi-agent workflow without degrading quality?
-
-These are not programming questions. They are questions about designing an environment — an ecology — in which humans, models, tools, policies, memories, and evaluators interact. The classical architectural blueprint describes a system's structure. What we need now is something more like an operating model: a living set of rules, surfaces, and feedback loops that shape how the system behaves over time.
+These are not programming questions, and they are not traditional system design questions. They are questions about designing an operating environment — the conditions under which AI agents, humans, tools, data, and policies interact. The classical architecture diagram describes what a system *is*. What we need now is something that describes what a system *does over time*: a living operating model, not a static blueprint.
 
 > **[FIGURE 1: "From System Design to System Ecology"]**
-> *Side-by-side: Left — classical boxes-and-lines blueprint (services, databases, APIs, queues), static, structural. Right — living network with humans, agents, tools, skills, memory layers, eval loops, approval gates, and feedback arrows. The right side is not just more complex — it is a different kind of thing. The blueprint describes; the ecology operates.*
-> *Style: Left in monochrome/blueprint, right in colour with visible feedback loops.*
+> *Two diagrams side by side. Left: classical boxes-and-lines architecture — static, structural, describes what exists. Right: a living network of agents, tools, memory layers, approval gates, eval loops, and feedback arrows — dynamic, describes how the system behaves over time. The point is not complexity; it is a different kind of thing entirely.*
 
-## Context Engineering Is the New Architecture
+## The New Design Surface
 
-The most important job in building AI agents is not prompt engineering. It is context engineering — managing the whole evolving state that surrounds the model: the system prompt, tools, memory, external data, message history, and every token that accumulates during a long-running task [1].
+The most consequential architectural decision in an AI-native system is not which model you choose. It is how you shape the context that surrounds the model at every step of every task.
 
-This reframes what architects actually design. The questions are no longer "which service owns this data?" or "what is the API contract?" The questions are: Which facts live in the agent's live context versus external memory? Which capabilities are tools, which are skills, which are hooks, which are subagents? How does context age, and when does it get compacted?
+Context is the medium in which the model reasons. Every token in the context window influences the output. Every token outside it is invisible. The architect's job is to curate that window — deciding what must be present, what can be retrieved on demand, what should be enforced through code rather than through instruction, and what should be isolated in a separate agent entirely.
 
-The decision surface is different, and it demands a new kind of architectural discipline. The choice between tool, skill, and subagent is not stylistic — it has direct consequences for token cost, reliability, and model behaviour.
+This gives rise to a decision framework that has no equivalent in classical architecture. A capability can live in four places, and the choice has consequences for cost, reliability, and model behaviour:
 
-**Use a tool** when the capability is external, deterministic, or action-oriented — fetching data, executing code, calling a service. Tools need distinct purpose, clear descriptions, minimal overlap, and token-efficient outputs. When these properties are missing, the model selects tools poorly and the system degrades unpredictably.
+A **tool** is the right choice when the capability is external and deterministic — fetching data, executing code, calling an API, taking a real-world action. Tools should have a single clear purpose, minimal overlap with other tools, and token-efficient outputs. When these properties are absent, the model selects tools erratically and the system becomes unpredictable.
 
-**Use a skill** when the agent needs reusable procedural knowledge or domain guidance while remaining in control. Skills persist in context once loaded — they are for information the agent needs sometimes, not always. Overloading skills creates a recurring token cost on every turn.
+A **skill** belongs when the agent needs reusable knowledge or procedural guidance that it uses sometimes but not always — style conventions, domain rules, step-by-step procedures. Skills are loaded on demand and persist in context. The cost of a poorly scoped skill is that it adds tokens on every turn where it is present, whether the agent needs it or not.
 
-**Use a subagent** when the task would pollute the main context, needs different permissions or a different model, or can run in parallel. Subagents provide context isolation that prevents side-tasks from flooding the main conversation with irrelevant tokens.
+A **subagent** is correct when a task would pollute the main conversation with irrelevant tokens, needs different permissions or a cheaper model, or can genuinely run in parallel. Subagents provide context isolation — but they add coordination overhead, and that overhead is only worth paying when the isolation genuinely matters.
 
-The practical consequence of getting this wrong is measurable. A production inventory management agent, after months of incremental additions, had accumulated a 400-line system prompt, 12 tools, and 3 subagents. Eval scores were degrading. The fix was architectural decomposition, not better prompting: the system prompt was shortened to 15 lines, the 12 tools were consolidated into 3 primitives (bash, read, write), business logic was moved into skills, and subagents were reduced to one where genuine context isolation was actually needed. Eval scores climbed from 62% to 92% [2]. The lesson is not that the original design was careless — it is that prompt sprawl accumulates like hidden coupling, and the remedy is architectural, not textual.
+A **hook or policy** is the right choice when the action must be enforced deterministically, regardless of what the model decides. Some constraints cannot be trusted to model judgment. They must be implemented in code.
 
-> **[FIGURE 2: "The Architect's New Decision Surface — Tool, Skill, or Subagent?"]**
-> *Decision matrix: three columns (Tool / Skill / Subagent), rows (when to use, context impact, token cost pattern, example). Before/after: 400-line prompt + 12 tools → 15-line prompt + 3 primitives + 1 subagent. Eval: 62% → 92%.*
+The practical cost of getting this wrong is concrete. A production agent that had accumulated a 400-line system prompt, twelve tools, and three subagents over several months of development showed progressively degrading evaluation scores. The fix was architectural decomposition: a 15-line system prompt, three primitive capabilities, skills for progressive context loading, and a single subagent where isolation was genuinely required. Evaluation scores rose from 62% to 92% [2]. The lesson is not that the original design was careless — it is that context sprawl accumulates like hidden coupling, invisible until it degrades the system.
 
-## Conway's Law Has Not Disappeared — It Has Become More Interesting
+> **[FIGURE 2: "The Architect's Context Topology Decision"]**
+> *Decision framework showing the four placement options (Tool / Skill / Subagent / Hook-Policy) with when to use each, the context impact, and the cost pattern. Before/after: 400-line prompt + 12 tools → 15-line prompt + 3 primitives. Eval: 62% → 92%.*
 
-Conway's original observation — that organizations produce systems whose structures mirror their communication structures — still holds [3]. But the "communication structure" is no longer composed only of humans and teams. It now includes prompts, tool namespaces, memory layers, routing rules, evaluator loops, and approval checkpoints.
+## Conway's Law Has Become More Dangerous
 
-The architecture of your agent system will mirror the structure of these interactions, whether you design it intentionally or not. A poorly bounded tool namespace becomes a coordination failure between agents. An underspecified eval loop becomes a quality gap that surfaces in production. An unconstrained subagent spawning pattern becomes a cost spiral nobody owns.
+In 1968, Melvin Conway observed that organizations produce systems whose structures mirror their communication structures. This principle has never been more relevant — or more treacherous.
 
-In practice, the decision to introduce multiple agents has often been driven by the wrong reasons — because "multi-agent" sounds sophisticated rather than because the architecture genuinely calls for it. Multi-agent design makes sense for three specific problems: context management (tasks too large for one context window), distributed development (teams need independent agents they own), and parallelization (subtasks can run concurrently) [4]. For everything else, a single agent with the right tools and a well-designed prompt is simpler and cheaper.
+In an AI-native engineering organization, the "communication structure" is no longer composed only of humans and teams. It now includes the shape of your prompts, the namespace of your tools, the boundaries between agents, the rules governing what each agent can access, the memory layers that persist between sessions, and the evaluation loops that provide feedback. Every one of these is an architectural choice. And if you do not make those choices deliberately, Conway's law will make them for you — producing agent systems whose failure modes mirror your organizational dysfunctions.
 
-When multi-agent systems do fail, the failure is almost always socio-technical. Agents duplicate work, leave gaps, or explore the wrong problem — not because the models are weak, but because the boundaries between agents were not designed with the same rigour as boundaries between services. The best agent boundaries, like the best microservice boundaries, are designed around cognitive ownership and information locality, not technical convenience [1][4].
+The failure pattern is recognizable. Agents in a poorly designed multi-agent system duplicate work, leave gaps at handoff boundaries, or explore the wrong problem — not because the models are weak, but because the boundaries between agents were drawn for the wrong reasons. Multi-agent design is justified by three specific needs: context management (the task exceeds one context window), distributed development (teams need independent ownership), and parallelization (subtasks can genuinely run concurrently) [4]. When organizations introduce multiple agents because the architecture sounds sophisticated, they pay the coordination cost without getting the isolation benefit.
 
-> **[FIGURE 3: "Conway's Law Extended — Communication Structures in an Agentic Organization"]**
-> *Two-panel: Left — traditional org chart mapped to system components. Right — same org, now including agents, prompts, tool namespaces, memory layers, eval loops, approval gates alongside human teams. The communication structure that shapes your architecture is no longer just humans talking to humans.*
+The deeper implication is this: in a multi-agent system, the system's important properties emerge from interactions among agents, tools, evaluators, and humans. You cannot predict them by examining any single component. You can only understand them by watching the ecology as a whole. This is why the architect's job is becoming ecological. You are not designing components. You are designing a system that evolves.
 
-## The 10x Stress Test — What the Architect Must Harden
+> **[FIGURE 3: "Conway's Law Extended"]**
+> *Left: traditional org chart mapped to system components. Right: same org, but the communication structure now includes agents, prompts, tool namespaces, memory layers, eval loops, and approval gates. The system mirrors not just how teams relate, but how every interaction channel is designed.*
 
-I walked through the 10x stress test at a high level in Post 1. Here I want to go deeper into the specific failure points the architect must address.
+## What Breaks at 10x
 
-**Build systems.** Hermetic builds — reproducible, self-contained, deterministically cached — become essential infrastructure, not best practice. When AI agents drive build activity, compute becomes the bottleneck rather than authoring. Weak build graphs and ad hoc scripts that were tolerable at human throughput become architectural liabilities at machine throughput. The build system must be designed from the start to be correct under high parallelism and high volume [5].
+I introduced the 10x stress test in the first post: what happens when AI increases development throughput by an order of magnitude? Here I want to be specific about what the architect must harden.
 
-**Version control.** Branchy workflows amplify reconciliation cost when change volume multiplies. Trunk discipline, small increments, and clear ownership become more important as agents produce more changes. The "One Version" principle — eliminating long-lived development branches — is not just a cultural preference; it is a throughput control that prevents merge debt from compounding [5].
+**The build system.** When AI agents drive build activity, compute — not authoring — becomes the bottleneck. Hermetic builds, reproducible outputs, and aggressive caching are no longer engineering hygiene; they are architectural requirements. A weak build graph that was tolerable at human throughput becomes a liability at machine throughput, because agents trigger far more builds per unit of time than developers do, and they do not slow down when the queue backs up.
 
-**Code review.** This is where the human bottleneck becomes acute. The economics of code generation have already shifted: it is cheap to generate large numbers of changes and easy for one agent to impose review burdens on many humans. The response must be architectural — static analysis embedded in the review tool itself, automated first-pass checking that catches resource leaks and race conditions so human reviewers can focus on architecture and intent. At scale, review latency becomes a first-class SLI, not just a process concern [5][6].
+**Version control discipline.** Branching strategies designed for human-paced development amplify merge debt when change volume multiplies. Trunk discipline — small increments, no long-lived branches, clear ownership — becomes a throughput control, not a cultural preference. The engineering cost of reconciling diverged branches scales non-linearly with branch age. AI agents do not wait for the merge to settle before generating the next change.
 
-**Testing.** The question is no longer "do we have tests?" but "can the system produce trustworthy evidence fast enough to gate changes?" At 10x throughput, test compute requirements scale quadratically with codebase size. The architecture must include offline evals, trajectory analysis, online evaluation, and alerting — not as additions to a conventional CI pipeline, but as the primary quality gate [4].
+**Code review.** This is where the human bottleneck crystallizes. The asymmetry is stark: AI makes it cheap to generate large volumes of change, but review remains constrained by human cognitive bandwidth. The architectural response is to embed automated first-pass analysis directly into the review workflow — catching resource leaks, race conditions, and coverage gaps before a human sees the diff. Google's Tricorder analyses over 50,000 changes per day [5]; automated review assists resolve 7.5% of all reviewer comments [5]. The lesson for architects is that review capacity is a system constraint that must be engineered, not assumed.
 
-The core insight: once AI makes code generation cheap, review, verification, reproducibility, and deployment governance become the real architecture. Architects who focus on agent selection and model choice while ignoring these infrastructure concerns will find that the bottleneck has simply moved.
+**Testing.** At 10x throughput, test compute requirements scale quadratically with codebase size. The question is no longer whether you have tests — it is whether the test infrastructure can produce trustworthy evidence fast enough to gate the change rate. This demands eval pipelines, trajectory analysis, and online evaluation as structural elements of the delivery system, not additions to a conventional CI pipeline.
 
-> **[FIGURE 4: "The 10x Stress Test — Where the Architect's Priorities Shift"]**
-> *Vertical pipeline: Code Generation → Build → Version Control → Code Review → Testing → Release → Production. Each stage: before-AI capacity vs after-10x capacity. Bottleneck migrates downstream. Key data: Tricorder 50K changes/day, ML edits resolve 7.5% of reviewer comments [5], quadratic dependency growth [5].*
+When AI makes code generation cheap, verification becomes the scarcest resource. The architect who optimizes for code generation while ignoring these downstream constraints has simply moved the bottleneck, not removed it.
 
-## Tokens Are Architecture, Not Accounting
+> **[FIGURE 4: "Where the Bottleneck Migrates"]**
+> *Vertical delivery pipeline (Code Generation → Build → VCS → Code Review → Testing → Release → Production). Before-AI capacity vs after-10x capacity at each stage. The bottleneck migrates downstream. Key data: Tricorder 50K changes/day, quadratic dependency growth, 7.5% automated review resolution.*
 
-Most architects treat token cost as an operational concern — something the finance team tracks and the operations team manages. This is a mistake. Token economics is a first-class architectural constraint, as fundamental as latency or throughput in a traditional distributed system.
+## Token Economics Is Architecture
 
-The reason is Amdahl's Law applied to agent workflows. Once model calls become cheap, the serial fraction — tool round trips, network waits, approval prompts, evaluator passes — dominates total latency. Parallelizing tool calls and subagent work can cut task completion time by up to 90% [1]. But the decision to parallelize, and how, is an architectural decision made at design time, not a runtime optimisation.
+Most architects treat token cost as an operational concern. This is a category error.
 
-Token costs also vary significantly with architectural choices — not just model selection. Multi-agent systems typically consume 4x the tokens of single-agent interactions, and complex research workflows can use 15x [1]. The difference between a stateful handoff pattern and a stateless subagent pattern is 40-50% of model calls for repeated requests [4]. The difference between a well-specified tool interface and a vague one can mean the model re-invokes the wrong tool repeatedly, consuming tokens on retries.
+Token economics is a first-class architectural constraint — as fundamental as latency or throughput in any distributed system. The decisions that shape token consumption are made at design time: which information stays in the active context, which is retrieved on demand, which is cached, which is delegated. Changing these decisions after deployment requires rearchitecting the system.
 
-The concrete overhead is worth knowing. A bash tool adds approximately 245 tokens per invocation. A text-editor tool adds approximately 700 tokens. Web search adds per-search charges on top of token costs [1]. These numbers seem small until you multiply by the number of agent turns in a long-horizon task.
+The numbers matter. Multi-agent systems typically consume four times the tokens of single-agent interactions. Complex research workflows can consume fifteen times as much [1]. The overhead from a single tool invocation is not free: a bash tool adds approximately 245 tokens, a text-editor tool adds approximately 700 [1]. A skill that stays in context across turns adds its token cost on every turn, whether the agent needs it or not. A poorly scoped system prompt that loads everything at initialization pays that cost for the lifetime of every session.
 
-The architectural implication: context topology — what lives inline, what becomes a skill, what is cached, what is delegated — is a token budget decision as much as a design decision. Getting it wrong wastes money and degrades performance. Getting it right is how you make multi-agent systems economically viable.
+The Amdahl's Law perspective is useful here. Once model calls get cheaper and faster, the serial fraction of the workflow dominates: tool round trips, approval waits, evaluator passes, handoff latency. Designing for parallelism — parallel tool calls, parallel subagents where the tasks are genuinely independent — is an architectural decision that can reduce task completion time by up to 90% [1]. This is not a configuration option; it is a structural choice made when the system is designed.
+
+Context topology — what lives inline, what is cached, what is retrieved on demand — is a token budget allocation. Getting it right is how you make multi-agent systems economically viable. Getting it wrong is how you burn engineering budget and degrade model performance simultaneously.
 
 > **[FIGURE 5: "Token Economics as Architecture"]**
-> *Sankey diagram: token flow through a multi-agent system. Inputs: system prompt, skills, tool definitions, tool results, message history, subagent transcripts. Show how architectural choices affect accumulation. Key callouts: 4x/15x multi-agent multiplier, 245/700-token tool overhead, 40-50% savings from stateful patterns.*
+> *Sankey diagram showing token flow through a multi-agent system: system prompt, skills, tool definitions, tool results, message history, subagent transcripts. Show how architectural choices (skill vs subagent, cached vs inline, code execution vs direct tool call) affect total accumulation. Key numbers: 4x/15x multipliers, 245/700-token tool overhead, 40-50% call savings from stateful patterns.*
 
-## The Harness Is the Architecture
+## Harness Engineering: The Discipline That Names All of This
 
-A name has solidified for what architects are actually building in AI-native systems: **harness engineering** — designing the scaffolding (context delivery, tool interfaces, planning artifacts, verification loops, memory systems, and sandboxes) that surrounds an agent and determines whether it succeeds or fails on real tasks [7].
+The discipline of designing the scaffolding around AI agents now has a name: harness engineering — the practice of building the context delivery, tool interfaces, planning artifacts, verification loops, memory systems, and sandboxes that determine whether an agent succeeds or fails on real tasks [7].
 
-Every harness component exists because the model cannot do that thing alone. And the best harnesses are designed knowing that each component will eventually become unnecessary as models improve — which means the design should be modular and shedable, not monolithic.
+The framing is clarifying. Every component of a harness exists because the model cannot do that thing alone. And the best harnesses are designed knowing that those components will eventually become unnecessary as models improve — which means the design should be modular, auditable, and shedable, not monolithic.
 
-The evidence that harness design dominates model selection is now hard to dismiss. Harness-only changes — no model swap — moved one coding agent from rank 30 to top 5 on Terminal Bench 2.0 [7]. Local models went from 2/10 to 10/10 on a SWE-bench subset purely by constraining tool access through state machine guardrails [7]. The measured finding is direct: "loop structure, not model size, is the binding constraint." Harness setup alone can swing benchmarks by 5 or more percentage points [7].
+The evidence that harness design dominates model selection is now hard to dispute. Harness-only changes — no model swap — moved a coding agent from rank 30 to top 5 on a competitive benchmark [7]. Constraining an agent's tool access through state machine guardrails moved local model performance from 2/10 to 10/10 on a held-out evaluation set [7]. The pattern is consistent enough to state as a principle: for most real-world tasks, loop structure and context discipline are the binding constraints, not model capability.
 
-The most instructive production case is Microsoft's Azure SRE Agent, which has autonomously handled over 35,000 production incidents and reduced time-to-mitigation from 40.5 hours to 3 minutes [7]. The architectural breakthrough was not a more capable model — it was abandoning 100+ bespoke specialized tools in favour of a filesystem-based context surface. Source code, runbooks, query schemas, and past investigation notes were all exposed as files, and the agent navigated with read_file, grep, find, and shell. "Intent Met" score on novel incidents rose from 45% to 75%. A well-designed context surface outperformed specialized tooling.
+The most instructive production case is a major cloud provider's site reliability engineering system, which has autonomously handled over 35,000 production incidents and reduced time-to-mitigation from 40.5 hours to 3 minutes [7]. The architectural breakthrough was not a more capable model. It was abandoning over 100 bespoke specialized tools in favour of a filesystem-based context surface — exposing source code, runbooks, query schemas, and past investigation notes as files that the agent navigates with standard shell commands. Specialized tooling lost to a well-designed context surface. "Intent Met" score on novel incidents rose from 45% to 75% [7].
 
-The emerging role is what Martin Fowler calls "humans on the loop" — engineers who design and maintain agent environments rather than inspecting individual outputs [7]. It is closer to operating system design than to application architecture: you are building the conditions under which programs run, not the programs themselves.
+The architect who designs agent systems is no longer primarily a system designer. They are a harness engineer — building the operating environment in which models work. It is closer to designing an operating system than an application: you are creating the conditions under which programs run, not the programs themselves.
 
-## What the Role Looks Like in Practice
+## Five Practices of the System Ecology Architect
 
-The AI-native architect is a designer of constraints, surfaces, and feedback loops. In practice, this means five things.
+In practice, this translates to five architectural responsibilities that do not exist in the classical role.
 
-**Defining the boundary between deterministic policy and model discretion.** Which actions are enforced by hooks, middleware, permission systems, and approval gates? Which are left to model judgment? This line must be drawn deliberately — not because models are untrustworthy, but because deterministic enforcement is auditable and model discretion is not.
+**Drawing the determinism boundary.** Some constraints must be enforced by code — not because the model is incompetent, but because compliance, safety, and auditability require deterministic guarantees. The architect decides which actions go through hooks, middleware, and approval gates, and which are left to model judgment. This line must be drawn explicitly and defended actively as the system evolves.
 
-**Designing context topology.** What stays inline? What becomes an on-demand skill? What is summarized, stored externally, or delegated to a subagent? This is the new equivalent of data schema design — except the substrate is the model's attention, and the cost of poor design is degraded reasoning, not just slow queries.
+**Designing context topology.** What lives inline in every conversation? What becomes a skill, loaded on demand? What is summarized and discarded? What is stored in external memory across sessions? What is isolated in a subagent? These decisions shape the model's reasoning quality and the system's operating cost simultaneously. They require the same rigour as data schema design, because the cost of getting them wrong compounds across every interaction.
 
-**Embedding evaluation and observability from the start.** Not as a monitoring dashboard bolted on after launch. Evaluation loops, trace collection, experiment infrastructure, and feedback mechanisms are structural elements. If the system cannot tell you whether an agent's behaviour has drifted, the system is not production-grade.
+**Making evaluation structural.** Observability and evaluation are not monitoring tools bolted on after launch. They are architectural elements that must be present at system design. If you cannot tell whether an agent's behaviour has drifted from its intended policy, the system is not production-grade — regardless of how well it performed during testing. Trace collection, experiment infrastructure, and feedback loops are part of the architecture, not additions to it.
 
-**Managing throughput economics.** Review latency, token spend per successful task, tool-selection error rates, and prompt-compaction frequency are the new SLIs. Generation is cheap. Verification is expensive. The SLIs must reflect what is actually constrained.
+**Managing throughput economics.** Token spend per successful task, tool-selection error rates, review latency, and prompt-compaction frequency are the new system SLIs. In a world where generation is cheap and verification is expensive, the metrics that matter are not the metrics that tracked the old bottleneck.
 
-**Curating ecosystem health.** A bad tool description, a lax permission policy, an under-specified eval, or a noisy context budget can each degrade the same user-facing outcome through different paths. The architect must watch for emergent degradation, adjust boundaries, and ensure the system can sustain itself as it grows. This is the gardener's work, not just the engineer's.
+**Curating ecosystem health.** A bad tool description, an under-specified eval, a lax permission boundary, or a noisy context budget can each degrade the same user-facing outcome through different causal paths. The architect must watch for emergent degradation, adjust boundaries, and ensure the ecosystem can sustain itself as it grows. This is the ongoing work — not a design decision made once, but a responsibility held continuously.
 
 > **[FIGURE 6: "The Five Practices of the System Ecology Architect"]**
-> *Pentagon or concentric rings: (1) Deterministic vs Model Discretion — the hard boundaries. (2) Context Topology. (3) Evaluation & Observability. (4) Throughput Economics. (5) Ecosystem Health. Each with 2-3 concrete examples. Should feel like a practical operating framework, not a theoretical model.*
+> *Pentagon diagram with the five practices at each vertex. Each annotated with 2-3 concrete examples. Should read as a practical operating framework — something an architect can use to audit whether their current role addresses all five dimensions.*
 
-## Shared Fate
+## The Gardener and the Engineer
 
-In traditional distributed systems, "shared fate" describes components that fail together because they share configuration, networking, or infrastructure. In agent systems, shared fate describes something broader: when a tool description is wrong, or an eval is under-specified, or a permission boundary is too loose, the degradation propagates through every agent that touches that component. The failure has no single owner. Everyone shares its consequences.
+Traditional software systems, once built, are relatively stable. You design them, build them, and then operate them. The architect's job is mostly done at design time.
 
-This is why the architect's role feels different now. You are not designing a system that others will build and operate. You are designing the operating conditions under which humans and agents will collaborate — and you are responsible for the emergent outcomes of that collaboration. The system is alive. It needs a gardener as much as it needs an engineer.
+Agent systems are different. They evolve as models improve, as workloads shift, as new tools appear and old assumptions expire. A harness component that was essential six months ago may be unnecessary today. A context topology that was optimal for one class of tasks may fail for another. The ecology drifts.
+
+This is why the architect of an AI-native system needs to be a gardener as much as an engineer. You are not designing a system and then handing it over to operations. You are designing the operating conditions under which humans and agents will collaborate — and you remain responsible for the emergent outcomes of that collaboration over time. The system is alive. It needs continuous tending, not just initial construction.
+
+The architect who understands this is not threatened by AI. They are doing the most interesting work in the field — designing environments that make intelligence useful, reliable, and trustworthy at scale.
 
 ---
 
@@ -129,12 +132,12 @@ This is why the architect's role feels different now. You are not designing a sy
 
 ---
 
-### Sources and References
+### References
 
-1. Anthropic (2026). ["Building Effective Agents"](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/building-effective-agents) and ["Research System."](https://www.anthropic.com/engineering/building-research-system) — context engineering, tool design, 90.2% multi-agent gain, 80% BrowseComp variance from tokens, 90% time reduction from parallelism, tool overhead: 245-token bash, 700-token text-editor.
-2. Will, Anthropic Applied AI (2026). "Tool, Skill, or Subagent." Code with Claude London, May 2026. — Inventory agent case study: 62% → 92% eval score, 400-line prompt → 15 lines.
-3. Conway, M. (1968). "How Do Committees Invent?" — original formulation of Conway's law.
-4. LangChain (2026). [Multi-Agent Systems guidance](https://langchain-ai.github.io/langgraph/) and performance comparisons. — three reasons for multi-agent, stateful patterns save 40-50% calls, 9K vs 15K tokens for multi-domain.
-5. Winters, T. et al. (2020). *Software Engineering at Google.* O'Reilly. — monorepo, Tricorder (50K changes/day), ML edits resolve 7.5% of reviewer comments, 1B LOC coverage daily.
-6. Forsgren, N. & MacVean, A. (2026). ["Build Core Skills."](https://io.google/2026/explore/workshop-4) Google I/O 2026.
-7. AI Boost (2026). [Awesome Harness Engineering.](https://github.com/ai-boost/awesome-harness-engineering) — harness definition, rank 30→top 5 (LangChain), 2/10→10/10 (statewright), Azure SRE 40.5h→3min / 45%→75%, 5pt benchmark swing (Anthropic), Martin Fowler "humans on the loop."
+1. Anthropic (2026). [Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/building-effective-agents) and [Research System](https://www.anthropic.com/engineering/building-research-system). Multi-agent token multipliers (4x/15x), 90% time reduction from parallelism, tool overhead (245/700 tokens), 80% BrowseComp variance from tokens.
+2. Will, Anthropic Applied AI (2026). "Tool, Skill, or Subagent." Code with Claude London. Inventory agent: 62% → 92% eval score via architectural decomposition.
+3. Conway, M. (1968). "How Do Committees Invent?" *Datamation.*
+4. LangChain (2026). [LangGraph multi-agent guidance](https://langchain-ai.github.io/langgraph/). Three justifications for multi-agent; stateful patterns save 40-50% calls; 9K vs 15K tokens for multi-domain requests.
+5. Winters, T., Manshreck, T. & Wright, H. (2020). *Software Engineering at Google.* O'Reilly. Tricorder (50K+ changes/day), ML review assists (7.5% of comments), quadratic dependency growth.
+6. Bender, A. (2026). ["Software Engineering at the Tipping Point."](https://io.google/2026/explore/workshop-2) Google I/O 2026.
+7. AI Boost (2026). [Awesome Harness Engineering](https://github.com/ai-boost/awesome-harness-engineering). Harness definition; rank 30 → top 5 (LangChain, no model swap); 2/10 → 10/10 (statewright, state machine constraints); SRE agent 40.5h → 3 min, 45% → 75% Intent Met (Microsoft); ±5pt benchmark swing from harness setup (Anthropic); Martin Fowler "humans on the loop."
